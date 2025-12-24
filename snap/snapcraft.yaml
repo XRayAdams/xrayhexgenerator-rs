@@ -1,0 +1,31 @@
+title: HEX Generator
+name: xrayhexgenerator
+version: 1.0.4+7
+summary: HEX Generator
+description: A simple yet versatile HEX Generator application
+contact: xrayadamo@gmail.com
+icon: snap/gui/xrayhexgenerator.png
+confinement: strict
+base: core22
+grade: stable
+license: MIT
+source-code: https://github.com/rayadams/xrayhexgenerator
+website: https://www.rayadams.app
+
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+   
+apps:
+  xrayhexgenerator:
+    command: xrayhexgenerator
+    extensions: [gnome]
+    plugs:
+      - network
+
+parts:
+  xrayhexgenerator:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart
+

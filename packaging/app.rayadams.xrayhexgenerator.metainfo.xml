@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>xrayhexgenerator.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>HEX Generator</name>
+  <summary>A simple yet versatile HEX Generator application built with Rust for Linux desktops.</summary>
+  <url type="homepage">https://github.com/XRayAdams/xrayhexgenerator-rs</url>
+  <content_rating type="oars-1.1"><category>Age 3+</category></content_rating>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/XRayAdams/xrayhexgenerator-rs/refs/heads/main/screenshots/ss01.png</image>
+      <caption>Main window UI</caption>
+    </screenshot>
+  </screenshots>
+</component>

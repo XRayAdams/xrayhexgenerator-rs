@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0.4+7
+Name=HEX Generator
+GenericName=HEX Generator
+Comment=HEX Generator
+Exec=xrayhexgenerator
+Icon=${SNAP}/meta/gui/xrayhexgenerator.png
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=HEX, Generator, HEX Generator;
+StartupWMClass=app.rayadams.xrayhexgenerator

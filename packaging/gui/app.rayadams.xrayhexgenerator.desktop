@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0.4+7
+Name=HEX Generator
+GenericName=HEX Generator
+Comment=HEX Generator
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=HEX,Generator,HEX Generator;
+StartupWMClass=app.rayadams.xrayhexgenerator
+Exec=/usr/local/lib/xrayhexgenerator/xrayhexgenerator
+TryExec=/usr/local/lib/xrayhexgenerator/xrayhexgenerator
+Icon=app.rayadams.xrayhexgenerator
