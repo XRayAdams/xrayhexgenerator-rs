@@ -212,6 +212,7 @@ fn build_ui(app: &Application) {
 
     // output text view
     let output_text_view = TextView::builder()
+        .css_classes(vec!["card"])
         .monospace(true)
         .editable(false)
         .tooltip_text("Output")
@@ -220,7 +221,7 @@ fn build_ui(app: &Application) {
         .right_margin(SPACING_MEDIUM)
         .top_margin(SPACING_MEDIUM)
         .bottom_margin(SPACING_MEDIUM)
-        .css_classes(vec!["card"])
+        
         .build();
 
     let output_scrolled = ScrolledWindow::builder()
