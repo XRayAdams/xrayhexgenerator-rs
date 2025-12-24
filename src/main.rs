@@ -122,11 +122,13 @@ fn build_ui(app: &Application) {
         .halign(Align::Start)
         .build();
 
-    let gen_label = Label::with_mnemonic("_Generator : ");
+    let gen_label = Label::with_mnemonic("G_enerator : ");
     let generators_cb = ComboBoxText::new();
     for generator in &view_model.borrow().generators {
         generators_cb.append_text(generator.name());
     }
+
+    gen_label.set_mnemonic_widget(Some(&generators_cb));
 
     // Get saved index 
     let saved_index = view_model.borrow().selected_index;

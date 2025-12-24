@@ -112,8 +112,7 @@ impl AppViewModel {
     pub fn generate_output(&self) -> String {
         let generator = &self.generators[self.selected_index];
 
-        let mut result = generator.generate(self.lines, self.digits as usize, self.output_uppercase);
-        result
+        generator.generate(self.lines, self.digits as usize, self.output_uppercase)
     }
 
     pub fn is_digits_editable(&self) -> bool {
