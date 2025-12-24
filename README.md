@@ -1,6 +1,6 @@
 # HEX Generator
 
-A simple yet versatile HEX Generator application built with Flutter for Linux desktops.
+A simple yet versatile HEX Generator application built with Rust and GTK+ 4 for Linux desktops.
 
 ## Features
 
@@ -20,10 +20,9 @@ This project is open source and aims to provide a straightforward tool for devel
 
 ## Screenshots
 
-<a href="screenshots/ss01.png"><img src="screenshots/ss01.png" alt="Screenshot 1" width="800"/></a>
-<a href="screenshots/ss02.png"><img src="screenshots/ss02.png" alt="Screenshot 2" width="800"/></a>
-<a href="screenshots/ss03.png"><img src="screenshots/ss03.png" alt="Screenshot 3" width="800"/></a>
-<a href="screenshots/ss04.png"><img src="screenshots/ss04.png" alt="Screenshot 4" width="800"/></a>
+<a href="screenshots/screenshot01.png"><img src="screenshots/screenshot01.png" alt="Screenshot 1" width="800"/></a>
+<a href="screenshots/screenshot02.png"><img src="screenshots/screenshot02.png" alt="Screenshot 2" width="800"/></a>
+<a href="screenshots/screenshot03.png"><img src="screenshots/screenshot03.png" alt="Screenshot 3" width="800"/></a>
 
 
 
@@ -39,7 +38,7 @@ This project is open source and aims to provide a straightforward tool for devel
 3. Install the package using the following command:
 
    ```bash
-   sudo dpkg -i [name-of-the-package].deb
+   sudo apt install [name-of-the-package].deb
    ```
 
 ### As .rpm package
@@ -48,6 +47,13 @@ This project is open source and aims to provide a straightforward tool for devel
 2. Open a terminal and navigate to the directory where you downloaded the file.
 3. Install the package using the following command:
 
-   ```bash
-   sudo rpm -i [name-of-the-package].rpm
-   ```
+    ```bash
+    sudo dnf install [name-of-the-package].rpm
+    # or, for openSUSE:
+    sudo zypper install [name-of-the-package].rpm
+    # or, for older systems:
+    sudo rpm -i [name-of-the-package].rpm
+    ```
+
+Replace `[name-of-the-package].rpm` with the actual file name.
+
