@@ -1,5 +1,5 @@
 [Desktop Entry]
-Version=2.1.0+23
+Version=2.2.1+26
 Name=HEX Generator
 GenericName=HEX Generator
 Comment=HEX Generator
@@ -9,4 +9,4 @@ Terminal=false
 Type=Application
 Categories=Utility;
 Keywords=HEX, Generator, HEX Generator;
-StartupWMClass=app.rayadams.xrayhexgenerator
+StartupWMClass=xrayhexgenerator
