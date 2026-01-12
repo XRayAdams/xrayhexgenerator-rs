@@ -1,5 +1,6 @@
 use libadwaita as adw;
 use relm4::prelude::*;
+use libadwaita::prelude::ApplicationExt;
 
 mod generators;
 mod helpers;
@@ -10,10 +11,18 @@ use app::App;
 
 
 fn main() {
-    adw::init().expect("Failed to initialize Libadwaita");
+    gtk4::init().expect("Failed to initialize GTK");
+    
+    let gtk_app = adw::Application::builder()
+        .application_id(APP_ID)
+        .flags(gtk4::gio::ApplicationFlags::NON_UNIQUE)
+        .build();
 
-    init_app_icon();
-
-    let app = RelmApp::new(APP_ID);
+    gtk_app.connect_activate(|_| {
+        init_app_icon();    
+    });
+    
+    let app = RelmApp::from_app(gtk_app);
     app.run::<App>(());
+
 }
