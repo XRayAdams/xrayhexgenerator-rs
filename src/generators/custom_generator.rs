@@ -1,3 +1,5 @@
+// (c) 2025,26 Konstantin Adamov, licensed under MIT
+
 use super::base_generator::BaseGenerator;
 use rand::Rng;
 
