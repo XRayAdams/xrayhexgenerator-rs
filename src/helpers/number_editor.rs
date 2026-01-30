@@ -1,3 +1,5 @@
+// (c) 2025,26 Konstantin Adamov, licensed under MIT
+
 use gtk4::Align;
 use gtk4::prelude::*;
 use relm4::prelude::*;

@@ -1,3 +1,5 @@
+// (c) 2025,26 Konstantin Adamov, licensed under MIT
+
 use libadwaita as adw;
 use gtk4::prelude::*;
 use gtk4::{Align, PolicyType, TextBuffer, TextView, glib};

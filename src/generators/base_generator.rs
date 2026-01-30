@@ -1,3 +1,5 @@
+// (c) 2025,26 Konstantin Adamov, licensed under MIT
+
 /// Defines the BaseGenerator trait for generating hex data.
 pub trait BaseGenerator {
     fn name(&self) -> &str;

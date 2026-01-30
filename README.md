@@ -18,6 +18,59 @@ A simple yet versatile HEX Generator application built with Rust and GTK+ 4 for 
 
 This project is open source and aims to provide a straightforward tool for developers and users who need to quickly generate various HEX-based data.
 
+## Command Line Interface
+
+The application can also be used from the command line for automation and scripting purposes. When no arguments are provided, the GUI will launch.
+
+### Usage
+
+```bash
+xrayhexgenerator [OPTIONS]
+```
+
+### Options
+
+- `-g, --generator <TYPE>` - Generator type (required for CLI mode)
+  - Available types: `custom`, `mac`, `guid`, `hexcolor`, `hexalpha`, `byteseq`, `prefixed`
+- `-l, --lines <X>` - Number of lines to generate (default: 1)
+- `-d, --digits <Y>` - Number of digits (where applicable)
+- `-u, --uppercase` - Use uppercase hexadecimal characters
+- `-h, --help` - Print help information
+- `-V, --version` - Print version information
+
+### Examples
+
+Generate 5 custom hex values with 16 digits each:
+```bash
+xrayhexgenerator -g=custom -l=5 -d=16
+```
+
+Generate 3 MAC addresses in uppercase:
+```bash
+xrayhexgenerator -g=mac -l=3 -u
+```
+
+Generate 10 GUIDs:
+```bash
+xrayhexgenerator -g=guid -l=10
+```
+
+Generate 5 hex colors:
+```bash
+xrayhexgenerator -g=hexcolor -l=5
+```
+
+Generate byte sequences with 12 digits:
+```bash
+xrayhexgenerator -g=byteseq -l=4 -d=12
+```
+
+Generate prefixed hex values in uppercase:
+```bash
+xrayhexgenerator -g=prefixed -l=3 -d=8 -u
+```
+
+
 ## Screenshots
 
 <a href="screenshots/screenshot01.png"><img src="screenshots/screenshot01.png" alt="Screenshot 1" width="800"/></a>

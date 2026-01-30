@@ -1,3 +1,5 @@
+// (c) 2025,26 Konstantin Adamov, licensed under MIT
+
 pub mod base_generator;
 pub mod mac_address;
 pub mod custom_generator;

@@ -1,3 +1,5 @@
+// (c) 2025,26 Konstantin Adamov, licensed under MIT
+
 use gtk4::{IconTheme};
 
 pub fn init_app_icon() {
