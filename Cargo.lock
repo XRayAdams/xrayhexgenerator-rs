@@ -1161,7 +1161,7 @@ dependencies = [
 
 [[package]]
 name = "xrayhexgenerator"
-version = "2.3.3+31"
+version = "2.3.5+33"
 dependencies = [
  "clap",
  "gtk4",

@@ -36,14 +36,13 @@ PACKAGE_DIR="$APP_NAME-$APP_VERSION+$APP_BUILD-$DEBIAN_ARCH"
 printf "Creating DEB package in %s.deb\n" "$PACKAGE_DIR"
 # Create the package directory
 rm -rf "$PACKAGE_DIR"
-mkdir -p "$PACKAGE_DIR/usr/local/lib/$APP_NAME"
+mkdir -p "$PACKAGE_DIR/usr/bin"
 mkdir -p "$PACKAGE_DIR/usr/share/applications"
 mkdir -p "$PACKAGE_DIR/usr/share/icons"
 mkdir -p "$PACKAGE_DIR/usr/share/metainfo"
 
-# Copy the built binary
-cp "target/release/$APP_NAME" "$PACKAGE_DIR/usr/local/lib/$APP_NAME/"
-cp -r "target/release/assets" "$PACKAGE_DIR/usr/local/lib/$APP_NAME/"
+# Copy the built binary directly to /usr/bin
+cp "target/release/$APP_NAME" "$PACKAGE_DIR/usr/bin/"
 cp packaging/gui/$APP_ID.desktop "$PACKAGE_DIR/usr/share/applications/"
 cp packaging/gui/$APP_ID.png "$PACKAGE_DIR/usr/share/icons/"
 cp packaging/$APP_ID.metainfo.xml "$PACKAGE_DIR/usr/share/metainfo/"
@@ -85,9 +84,9 @@ sed -e "s/Icon=$APP_ID/Icon=$APP_NAME/" -e "s/^\(Exec\|TryExec\)=.*$/\1=$APP_NAM
 cp packaging/gui/"$APP_ID".png "$RPM_BUILD_ROOT/SOURCES/"
 cp packaging/"$APP_ID".metainfo.xml "$RPM_BUILD_ROOT/SOURCES/"
 
-# Package the application files into a tarball
+# Package the application binary into a tarball
 pushd target || exit
-tar -czvf "$RPM_BUILD_ROOT/SOURCES/$APP_NAME-$APP_VERSION.tar.gz" "release/$APP_NAME" release/assets
+tar -czvf "$RPM_BUILD_ROOT/SOURCES/$APP_NAME-$APP_VERSION.tar.gz" "release/$APP_NAME"
 popd || exit
 
 # Build the RPM
@@ -114,7 +113,7 @@ ARCHIVE_NAME="${APP_NAME}-${APP_VERSION}+${APP_BUILD}-${MACHINE_ARCH}.tar.gz"
 FULL_ARCHIVE_PATH="dist/${ARCHIVE_NAME}"
 SOURCE_DIR="target/release"
 
-# Only include the executable and the assets folder
-tar -czvf "$FULL_ARCHIVE_PATH" -C "$SOURCE_DIR" "$APP_NAME" assets > /dev/null
+# Only include the executable (icon is now embedded)
+tar -czvf "$FULL_ARCHIVE_PATH" -C "$SOURCE_DIR" "$APP_NAME" > /dev/null
 echo "TAR archive created in dist/"
 echo "___________________________________________________________"

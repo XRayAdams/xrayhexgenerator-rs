@@ -311,8 +311,8 @@ impl SimpleComponent for App {
                     .get(self.selected_index)
                     .map(|generator| {
                         self.result_text = generator.generate(
-                            self.digits,
                             self.lines,
+                            self.digits,
                             self.output_uppercase,
                         );
                     });
