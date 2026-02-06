@@ -1,6 +1,6 @@
 title: HEX Generator
 name: xrayhexgenerator
-version: 2.3.3+31
+version: 2.3.5+33
 summary: HEX Generator
 description: A simple yet versatile HEX Generator application
 contact: xrayadamo@gmail.com
@@ -38,9 +38,3 @@ parts:
       - pkg-config
       - libgtk-4-dev
       - libadwaita-1-dev
-
-  assets:
-    plugin: dump
-    source: assets
-    organize:
-      '*': assets/

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/app/rayadams/xrayhexgenerator">
+    <file compressed="true">assets/app.rayadams.xrayhexgenerator.png</file>
+  </gresource>
+</gresources>
