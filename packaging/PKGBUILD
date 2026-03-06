@@ -1,0 +1,34 @@
+# Maintainer: Konstantin Adamov <xrayadamo@gmail.com>
+pkgname=xrayhexgenerator
+pkgver=2.3.5
+pkgrel=33
+pkgdesc="A simple yet versatile HEX Generator application built with Rust for Linux desktops."
+arch=('x86_64' 'aarch64')
+url="https://github.com/XRayAdams/xrayhexgenerator-rs"
+license=('MIT')
+depends=('gtk4' 'libadwaita' 'glibc' 'gcc-libs')
+makedepends=('cargo' 'gettext' 'glib2')
+
+build() {
+  cd "$startdir"
+  cargo build --release --locked --target-dir=target
+}
+
+package() {
+  cd "$startdir"
+  
+  # Main executable
+  install -Dm755 "target/release/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+
+  # Desktop file
+  install -Dm644 "packaging/gui/app.rayadams.xrayhexgenerator.desktop" -t "${pkgdir}/usr/share/applications/"
+  
+  # Icon
+  install -Dm644 "packaging/gui/app.rayadams.xrayhexgenerator.png" "${pkgdir}/usr/share/icons/hicolor/512x512/apps/app.rayadams.xrayhexgenerator.png"
+  
+  # Metainfo
+  install -Dm644 "packaging/app.rayadams.xrayhexgenerator.metainfo.xml" -t "${pkgdir}/usr/share/metainfo/"
+  
+  # License
+  install -Dm644 "LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

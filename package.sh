@@ -106,6 +106,16 @@ echo "RPM package created in dist/"
 
 echo "___________________________________________________________"
 
+#Packaging AUR
+cp packaging/PKGBUILD .
+PACKAGER="Konstantin Adamov <xrayadamo@gmail.com>" PKGEXT='.pkg.tar.zst' COMPRESSZST=(zstd -c -T0 --auto-threads=logical -) env makepkg --nodeps -f
+mv *.pkg.tar.zst dist/
+rm -rf pkg/
+rm PKGBUILD
+
+echo "AUR package created in dist/"
+echo "___________________________________________________________"
+
 # Package TAR
 echo "Preparing TAR archive"
 
@@ -113,7 +123,6 @@ ARCHIVE_NAME="${APP_NAME}-${APP_VERSION}+${APP_BUILD}-${MACHINE_ARCH}.tar.gz"
 FULL_ARCHIVE_PATH="dist/${ARCHIVE_NAME}"
 SOURCE_DIR="target/release"
 
-# Only include the executable (icon is now embedded)
 tar -czvf "$FULL_ARCHIVE_PATH" -C "$SOURCE_DIR" "$APP_NAME" > /dev/null
 echo "TAR archive created in dist/"
 echo "___________________________________________________________"
