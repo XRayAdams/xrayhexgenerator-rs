@@ -102,11 +102,17 @@ xrayhexgenerator -g=prefixed -l=3 -d=8 -u
 
     ```bash
     sudo dnf install [name-of-the-package].rpm
-    # or, for openSUSE:
-    sudo zypper install [name-of-the-package].rpm
-    # or, for older systems:
-    sudo rpm -i [name-of-the-package].rpm
     ```
 
-Replace `[name-of-the-package].rpm` with the actual file name.
+### As Arch Linux package
+
+1. Download the latest `.pkg.tar.zst` package from the project's GitHub releases page.
+2. Open a terminal and navigate to the directory where you downloaded the file.
+3. Install the package using the following command:
+
+    ```bash
+    sudo pacman -U [name-of-the-package].pkg.tar.zst
+    ```
+
+Replace `[name-of-the-package]` with the actual file name.
 
