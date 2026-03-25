@@ -20,7 +20,7 @@ use crate::generators::mac_address::MacAddressGenerator;
 use crate::generators::prefixed_hex::PrefixedHexGenerator;
 use crate::helpers::actions::{AboutAction, WindowActionGroup, create_about_action};
 use crate::helpers::constants::{APP_NAME, SPACING_LARGE, SPACING_MEDIUM};
-use crate::helpers::number_editor::{CounterOutput, NumberEditor, NumberEditorInput};
+use crate::helpers::number_editor::{NumberEditor};
 
 #[derive(Serialize, Deserialize)]
 struct AppSettings {
@@ -43,13 +43,12 @@ impl Default for AppSettings {
 pub struct App {
     selected_index: usize,
     digits: usize,
+    digits_enabled: bool,
     lines: usize,
     output_uppercase: bool,
     result_text: String,
     generators: Vec<Box<dyn BaseGenerator>>,
     gen_names: gtk4::StringList,
-    digits_widget: Controller<NumberEditor>,
-    lines_widget: Controller<NumberEditor>,
     toast_overlay: Option<ToastOverlay>,
     text_view: Option<TextView>,
 }
@@ -179,8 +178,29 @@ impl SimpleComponent for App {
                             set_orientation: gtk::Orientation::Horizontal,
                             set_spacing: SPACING_MEDIUM,
 
-                            model.digits_widget.widget(),
-                            model.lines_widget.widget(),
+                            NumberEditor {
+                                set_label: "Digits",
+                                set_min: 1.0,
+                                set_max: 100.0,
+                                #[watch]
+                                set_value: model.digits as f64,
+                                #[watch]
+                                set_enabled: model.digits_enabled,
+                                connect_value_changed[sender] => move |_, value| {
+                                    sender.input(Messages::UpdateDigits(value as usize));
+                                },
+                            },
+
+                            NumberEditor {
+                                set_label: "Lines",
+                                set_min: 1.0,
+                                set_max: 10000.0,
+                                set_value: model.lines as f64,
+                                connect_value_changed[sender] => move |_, value| {
+                                    sender.input(Messages::UpdateLines(value as usize));
+                                },
+                            },
+                          
 
                             gtk::Box{
                                 set_orientation: gtk::Orientation::Vertical,
@@ -265,7 +285,8 @@ impl SimpleComponent for App {
             
         let mut model = Self {
             selected_index: settings.selected_index,
-            digits: settings.digits,
+            digits: def_digits,
+            digits_enabled: digits_are_editable,
             lines: settings.lines,
             result_text: String::new(),
             toast_overlay: None,
@@ -273,16 +294,7 @@ impl SimpleComponent for App {
             output_uppercase: settings.output_uppercase,
             generators: generators,
             gen_names: gtk4::StringList::new(&[]),
-            digits_widget: NumberEditor::builder()
-                .launch(("Digits".to_string(), 1, 100, def_digits, digits_are_editable))
-                .forward(sender.input_sender(), |output| match output {
-                    CounterOutput::ValueChanged(value) => Messages::UpdateDigits(value),
-                }),
-            lines_widget: NumberEditor::builder()
-                .launch(("Lines".to_string(), 1, 1000, settings.lines, true))
-                .forward(sender.input_sender(), |output| match output {
-                    CounterOutput::ValueChanged(value) => Messages::UpdateLines(value),
-                }),
+            
         };
 
         for generator in model.generators.iter() {
@@ -335,13 +347,8 @@ impl SimpleComponent for App {
 
                 self.generators.get(index)
                     .map(|generator| {
-                        let enabled = generator.digist_are_editable();
-                        let def_digits = generator.default_digits();
-                        
-                        self.digits_widget
-                            .emit(NumberEditorInput::SetEnabled(enabled));
-                        self.digits_widget
-                            .emit(NumberEditorInput::SetValue(def_digits));
+                        self.digits_enabled = generator.digist_are_editable();
+                        self.digits = generator.default_digits();
                     });
 
                 self.save_config();
