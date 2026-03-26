@@ -13,6 +13,9 @@ A simple yet versatile HEX Generator application built with Rust and GTK+ 4 for 
     *   **HEX Color with alpha:** Generate random HEX color codes with an alpha channel (e.g., #AARRGGBB).
     *   **Byte Sequence:** Generate sequences of HEX bytes (e.g., 00 FF 1A).
     *   **Prefixed HEX:** Generate HEX strings with a "0x" prefix.
+    *   **EUI-64 Identifier:** Generate 64-bit Extended Unique Identifiers (e.g., a3:f1:7c:5b:2e:90:b4:c1).
+    *   **IPv4 Address:** Generate random IPv4 addresses (e.g., 192.168.1.42).
+    *   **IPv6 Address:** Generate random IPv6 addresses (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).
 *   **Customizable Output:** Control the number of lines and digits (for applicable generators) and toggle uppercase output.
 *   **Easy Sharing & Saving:** Copy generated data to the clipboard, share it, or save it to a file.
 
@@ -31,7 +34,7 @@ xrayhexgenerator [OPTIONS]
 ### Options
 
 - `-g, --generator <TYPE>` - Generator type (required for CLI mode)
-  - Available types: `custom`, `mac`, `guid`, `hexcolor`, `hexalpha`, `byteseq`, `prefixed`
+  - Available types: `custom`, `mac`, `eui64`, `ipv4`, `ipv6`, `guid`, `hexcolor`, `hexalpha`, `byteseq`, `prefixed`
 - `-l, --lines <X>` - Number of lines to generate (default: 1)
 - `-d, --digits <Y>` - Number of digits (where applicable)
 - `-u, --uppercase` - Use uppercase hexadecimal characters
@@ -68,6 +71,21 @@ xrayhexgenerator -g=byteseq -l=4 -d=12
 Generate prefixed hex values in uppercase:
 ```bash
 xrayhexgenerator -g=prefixed -l=3 -d=8 -u
+```
+
+Generate 5 EUI-64 identifiers:
+```bash
+xrayhexgenerator -g=eui64 -l=5
+```
+
+Generate 5 random IPv4 addresses:
+```bash
+xrayhexgenerator -g=ipv4 -l=5
+```
+
+Generate 5 random IPv6 addresses in uppercase:
+```bash
+xrayhexgenerator -g=ipv6 -l=5 -u
 ```
 
 
