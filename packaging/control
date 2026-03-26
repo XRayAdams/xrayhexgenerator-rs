@@ -1,5 +1,5 @@
 Package: xrayhexgenerator
-Version: 2.3.6+34
+Version: 2.4.7+35
 Architecture: amd64
 Priority: optional
 Depends:

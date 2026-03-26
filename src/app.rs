@@ -17,6 +17,9 @@ use crate::generators::guid_generator::GUIDGenerator;
 use crate::generators::hex_color::HexColorGenerator;
 use crate::generators::hex_color_with_alpha::HexColorWithAlphaGenerator;
 use crate::generators::mac_address::MacAddressGenerator;
+use crate::generators::eui64_generator::Eui64Generator;
+use crate::generators::ipv4_generator::IPv4Generator;
+use crate::generators::ipv6_generator::IPv6Generator;
 use crate::generators::prefixed_hex::PrefixedHexGenerator;
 use crate::helpers::actions::{AboutAction, WindowActionGroup, create_about_action};
 use crate::helpers::constants::{APP_NAME, SPACING_LARGE, SPACING_MEDIUM};
@@ -105,6 +108,9 @@ impl App {
             Box::new(HexColorGenerator {}),
             Box::new(HexColorWithAlphaGenerator {}),
             Box::new(PrefixedHexGenerator {}),
+            Box::new(Eui64Generator {}),
+            Box::new(IPv4Generator {}),
+            Box::new(IPv6Generator {}),
         ]
     }
 

@@ -8,3 +8,6 @@ pub mod guid_generator;
 pub mod hex_color;
 pub mod hex_color_with_alpha;
 pub mod prefixed_hex;
+pub mod eui64_generator;
+pub mod ipv4_generator;
+pub mod ipv6_generator;

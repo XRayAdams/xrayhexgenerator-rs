@@ -9,7 +9,7 @@ use clap::Parser;
 #[command(disable_version_flag = true)]
 #[command(arg_required_else_help = false)]
 pub struct Cli {
-    /// Generator type: custom, mac, guid, hexcolor, hexalpha, byteseq, prefixed
+    /// Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed
     #[arg(short = 'g', long = "generator", value_name = "TYPE")]
     pub generator: Option<String>,
 
