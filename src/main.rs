@@ -15,6 +15,9 @@ use cli::Cli;
 use generators::base_generator::BaseGenerator;
 use generators::custom_generator::CustomGenerator;
 use generators::mac_address::MacAddressGenerator;
+use generators::eui64_generator::Eui64Generator;
+use generators::ipv4_generator::IPv4Generator;
+use generators::ipv6_generator::IPv6Generator;
 use generators::guid_generator::GUIDGenerator;
 use generators::hex_color::HexColorGenerator;
 use generators::hex_color_with_alpha::HexColorWithAlphaGenerator;
@@ -28,6 +31,9 @@ fn run_cli_mode() {
     let generator: Box<dyn BaseGenerator> = match args.generator.as_deref() {
         Some("custom") => Box::new(CustomGenerator),
         Some("mac") => Box::new(MacAddressGenerator),
+        Some("eui64") => Box::new(Eui64Generator),
+        Some("ipv4") => Box::new(IPv4Generator),
+        Some("ipv6") => Box::new(IPv6Generator),
         Some("guid") => Box::new(GUIDGenerator),
         Some("hexcolor") => Box::new(HexColorGenerator),
         Some("hexalpha") => Box::new(HexColorWithAlphaGenerator),
@@ -35,12 +41,12 @@ fn run_cli_mode() {
         Some("prefixed") => Box::new(PrefixedHexGenerator),
         Some(unknown) => {
             eprintln!("Unknown generator: {}. Using 'custom' instead.", unknown);
-            eprintln!("Available generators: custom, mac, guid, hexcolor, hexalpha, byteseq, prefixed");
+            eprintln!("Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed");
             Box::new(CustomGenerator)
         }
         None => {
             eprintln!("No generator specified. Use -g <type> to select a generator.");
-            eprintln!("Available generators: custom, mac, guid, hexcolor, hexalpha, byteseq, prefixed");
+            eprintln!("Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed");
             std::process::exit(1);
         }
     };

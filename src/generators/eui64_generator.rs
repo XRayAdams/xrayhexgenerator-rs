@@ -3,26 +3,26 @@
 use super::base_generator::BaseGenerator;
 use rand::Rng;
 
-pub struct MacAddressGenerator;
+pub struct Eui64Generator;
 
-/// Implementation of BaseGenerator for generating MAC addresses.
-impl BaseGenerator for MacAddressGenerator {
+/// Implementation of BaseGenerator for generating EUI-64 identifiers.
+impl BaseGenerator for Eui64Generator {
     fn name(&self) -> &str {
-        "MAC Address"
+        "EUI-64 Identifier"
     }
     fn digist_are_editable(&self) -> bool {
         false
     }
     fn default_digits(&self) -> usize {
-        12
+        16
     }
-    
+
     fn generate(&self, lines: usize, _digits: usize, upper_case: bool) -> String {
         let mut result = String::new();
         let mut rng = rand::thread_rng();
 
         for _ in 0..lines {
-            let mac: Vec<String> = (0..6)
+            let octets: Vec<String> = (0..8)
                 .map(|_| {
                     let byte = rng.gen_range(0u8..=255u8);
                     if upper_case {
@@ -32,7 +32,7 @@ impl BaseGenerator for MacAddressGenerator {
                     }
                 })
                 .collect();
-            result.push_str(&mac.join(":"));
+            result.push_str(&octets.join(":"));
             result.push('\n');
         }
 

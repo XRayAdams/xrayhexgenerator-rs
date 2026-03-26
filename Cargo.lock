@@ -1160,7 +1160,7 @@ checksum = "a90e88e4667264a994d34e6d1ab2d26d398dcdca8b7f52bec8668957517fc7d8"
 
 [[package]]
 name = "xrayhexgenerator"
-version = "2.3.6+34"
+version = "2.4.7+35"
 dependencies = [
  "clap",
  "gtk4",

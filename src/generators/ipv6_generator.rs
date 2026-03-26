@@ -3,36 +3,36 @@
 use super::base_generator::BaseGenerator;
 use rand::Rng;
 
-pub struct MacAddressGenerator;
+pub struct IPv6Generator;
 
-/// Implementation of BaseGenerator for generating MAC addresses.
-impl BaseGenerator for MacAddressGenerator {
+/// Implementation of BaseGenerator for generating random IPv6 addresses.
+impl BaseGenerator for IPv6Generator {
     fn name(&self) -> &str {
-        "MAC Address"
+        "IPv6 Address"
     }
     fn digist_are_editable(&self) -> bool {
         false
     }
     fn default_digits(&self) -> usize {
-        12
+        32
     }
-    
+
     fn generate(&self, lines: usize, _digits: usize, upper_case: bool) -> String {
         let mut result = String::new();
         let mut rng = rand::thread_rng();
 
         for _ in 0..lines {
-            let mac: Vec<String> = (0..6)
+            let groups: Vec<String> = (0..8)
                 .map(|_| {
-                    let byte = rng.gen_range(0u8..=255u8);
+                    let word: u16 = rng.gen_range(0u16..=65535u16);
                     if upper_case {
-                        format!("{:02X}", byte)
+                        format!("{:04X}", word)
                     } else {
-                        format!("{:02x}", byte)
+                        format!("{:04x}", word)
                     }
                 })
                 .collect();
-            result.push_str(&mac.join(":"));
+            result.push_str(&groups.join(":"));
             result.push('\n');
         }
 
