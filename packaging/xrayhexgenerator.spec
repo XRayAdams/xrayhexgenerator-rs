@@ -1,6 +1,6 @@
 %define _name xrayhexgenerator
-%define _version 2.4.7
-%define _release 35
+%define _version 2.4.8
+%define _release 36
 %define debug_package %{nil}
 
 Name: %{_name}
@@ -17,6 +17,7 @@ Source0: %{_name}-%{_version}.tar.gz
 Source1: app.rayadams.xrayhexgenerator.desktop
 Source2: app.rayadams.xrayhexgenerator.png
 Source3: app.rayadams.xrayhexgenerator.metainfo.xml
+Source4: LICENSE
 
 Requires: gtk3, libstdc++
 
@@ -43,7 +44,7 @@ Easy Sharing & Saving: Copy generated data to the clipboard, share it, or save i
 %setup -q -n release
 
 %build
-# This section is intentionally left blank as we are packaging a pre-compiled Flutter application.
+# This section is intentionally left blank as we are packaging a pre-compiled application.
 
 %install
 rm -rf %{buildroot}
@@ -64,11 +65,15 @@ install -m 644 %{SOURCE2} %{buildroot}/usr/share/icons/hicolor/256x256/apps/%{_n
 # Copy meta info
 install -m 644 %{SOURCE3} %{buildroot}%{_datadir}/metainfo/%{name}.metainfo.xml
 
+# Copy license file
+install -Dpm 644 %{SOURCE4} %{buildroot}%{_licensedir}/%{name}/LICENSE
 %files
 /usr/bin/%{_name}
 /usr/share/applications/%{_name}.desktop
 /usr/share/icons/hicolor/256x256/apps/%{_name}.png
 %{_datadir}/metainfo/%{name}.metainfo.xml
+%dir %{_licensedir}/%{name}
+%license %{_licensedir}/%{name}/LICENSE
 
 %changelog
 *loghere

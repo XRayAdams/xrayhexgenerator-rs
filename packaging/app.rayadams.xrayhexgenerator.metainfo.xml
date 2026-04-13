@@ -8,8 +8,16 @@
   <content_rating type="oars-1.1"><category>Age 3+</category></content_rating>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/XRayAdams/xrayhexgenerator-rs/refs/heads/main/screenshots/ss01.png</image>
+      <image>https://raw.githubusercontent.com/XRayAdams/xrayhexgenerator-rs/refs/heads/main/screenshots/screenshot01.png</image>
       <caption>Main window UI</caption>
+    </screenshot>
+    <screenshot >
+      <image>https://raw.githubusercontent.com/XRayAdams/xrayhexgenerator-rs/refs/heads/main/screenshots/screenshot02.png</image>
+      <caption>Another view of the main window UI</caption>
+    </screenshot>
+    <screenshot >
+      <image>https://raw.githubusercontent.com/XRayAdams/xrayhexgenerator-rs/refs/heads/main/screenshots/screenshot03.png</image>
+      <caption>Another view of the main window UI</caption>
     </screenshot>
   </screenshots>
 </component>
