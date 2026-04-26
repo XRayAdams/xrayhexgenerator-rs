@@ -1,6 +1,6 @@
 %define _name xrayhexgenerator
-%define _version 2.4.8
-%define _release 36
+%define _version 2.5.10
+%define _release 40
 %define debug_package %{nil}
 
 Name: %{_name}
@@ -56,6 +56,11 @@ mkdir -p %{buildroot}%{_datadir}/metainfo
 # Install the binary directly to /usr/bin
 install -m 755 %{_name} %{buildroot}/usr/bin/%{_name}
 
+# Install locale files
+find locale -name "*.mo" | while read mo; do \
+    install -D -m 644 "$mo" %{buildroot}/usr/share/${mo}; \
+done
+
 # Copy the desktop file
 install -m 644 %{SOURCE1} %{buildroot}/usr/share/applications/%{_name}.desktop
 
@@ -74,6 +79,7 @@ install -Dpm 644 %{SOURCE4} %{buildroot}%{_licensedir}/%{name}/LICENSE
 %{_datadir}/metainfo/%{name}.metainfo.xml
 %dir %{_licensedir}/%{name}
 %license %{_licensedir}/%{name}/LICENSE
+/usr/share/locale/*/LC_MESSAGES/xrayhexgenerator.mo
 
 %changelog
 *loghere

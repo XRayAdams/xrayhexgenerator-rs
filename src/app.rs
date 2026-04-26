@@ -10,6 +10,8 @@ use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::PathBuf;
 
+use crate::tr;
+
 use crate::generators::base_generator::BaseGenerator;
 use crate::generators::byte_sequence::ByteSequenceGenerator;
 use crate::generators::custom_generator::CustomGenerator;
@@ -128,7 +130,7 @@ impl SimpleComponent for App {
     menu! {
         main_menu: {
             section! {
-                "_About" => AboutAction,
+                &tr!("_About") => AboutAction,
             }
         }
     }
@@ -136,7 +138,7 @@ impl SimpleComponent for App {
         #[root]
         main_window = adw::ApplicationWindow {
             set_visible: true,
-            set_title: Some(APP_NAME),
+            set_title: Some(&tr!(APP_NAME)),
             set_default_size: (900, 600),
 
             #[name = "toast_overlay"]
@@ -166,7 +168,7 @@ impl SimpleComponent for App {
                             set_spacing: SPACING_MEDIUM,
 
                             gtk::Label {
-                                set_label: "Generator :",
+                                set_label: &tr!("Generator:"),
                                 set_halign: Align::Start,
                             },
                             gtk::DropDown {
@@ -185,7 +187,7 @@ impl SimpleComponent for App {
                             set_spacing: SPACING_MEDIUM,
 
                             NumberEditor {
-                                set_label: "Digits",
+                                set_label: &tr!("Digits"),
                                 set_min: 1.0,
                                 set_max: 100.0,
                                 #[watch]
@@ -198,7 +200,7 @@ impl SimpleComponent for App {
                             },
 
                             NumberEditor {
-                                set_label: "Lines",
+                                set_label: &tr!("Lines"),
                                 set_min: 1.0,
                                 set_max: 10000.0,
                                 set_value: model.lines as f64,
@@ -213,7 +215,7 @@ impl SimpleComponent for App {
                                 set_spacing: 5,
                                 set_halign: Align::Center,
                                     gtk::Label{
-                                    set_label: "Output in Uppercase",
+                                    set_label: &tr!("Output in Uppercase"),
                                 },
                                 gtk::Switch{
                                     set_active: model.output_uppercase,
@@ -256,13 +258,13 @@ impl SimpleComponent for App {
                             set_halign: Align::Start,
                             set_spacing: SPACING_LARGE,
                             set_margin_vertical: SPACING_MEDIUM,
-                            gtk::Button::with_mnemonic("_Generate") {
+                            gtk::Button::with_mnemonic(&tr!("_Generate")) {
                                 set_halign: Align::Start,
                                 connect_clicked[sender] => move |_| {
                                     sender.input(Messages::Generate);
                                 },
                             },
-                            gtk::Button::with_mnemonic("_Copy to Clipboard") {
+                            gtk::Button::with_mnemonic(&tr!("_Copy to Clipboard")) {
                                 #[watch]
                                 set_sensitive: !model.result_text.is_empty(),
                                 set_halign: Align::Start,
@@ -304,7 +306,7 @@ impl SimpleComponent for App {
         };
 
         for generator in model.generators.iter() {
-            model.gen_names.append(&generator.name());
+            model.gen_names.append(&tr!(generator.name()));
         }
 
         let widgets = view_output!();
@@ -345,7 +347,7 @@ impl SimpleComponent for App {
                 self.toast_overlay
                     .clone()
                     .unwrap()
-                    .add_toast(adw::Toast::new("Copied to clipboard"));
+                    .add_toast(adw::Toast::new(&tr!("Copied to clipboard")));
             }
             Messages::UpdateSelectedIndex(index) => {
                 self.selected_index = index;

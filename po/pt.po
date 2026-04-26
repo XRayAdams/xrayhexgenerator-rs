@@ -1,0 +1,141 @@
+# Portuguese translation for xrayhexgenerator.
+# Copyright (C) 2025, 26 Konstantin Adamov
+# This file is distributed under the same license as the xrayhexgenerator package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xrayhexgenerator 2.4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-25 00:00+0000\n"
+"PO-Revision-Date: 2026-04-25 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Window title / About dialog application name
+msgid "Hex Generator"
+msgstr "Gerador Hex"
+
+#. Menu item
+msgid "_About"
+msgstr "_Sobre"
+
+#. Label for generator dropdown
+msgid "Generator:"
+msgstr "Gerador:"
+
+#. Label for digits spin button
+msgid "Digits"
+msgstr "Dígitos"
+
+#. Label for lines spin button
+msgid "Lines"
+msgstr "Linhas"
+
+#. Label for uppercase switch
+msgid "Output in Uppercase"
+msgstr "Saída em maiúsculas"
+
+#. Generate button (mnemonic)
+msgid "_Generate"
+msgstr "_Gerar"
+
+#. Copy to clipboard button (mnemonic)
+msgid "_Copy to Clipboard"
+msgstr "_Copiar para a área de transferência"
+
+#. Toast notification after copying
+msgid "Copied to clipboard"
+msgstr "Copiado para a área de transferência"
+
+#. About dialog copyright
+msgid "© 2025, 26 Konstantin Adamov"
+msgstr "© 2025, 26 Konstantin Adamov"
+
+#. Generator name: Custom Hex
+msgid "Custom Hex"
+msgstr "Hex personalizado"
+
+#. Generator name: MAC Address
+msgid "MAC Address"
+msgstr "Endereço MAC"
+
+#. Generator name: Byte Sequence
+msgid "Byte Sequence"
+msgstr "Sequência de bytes"
+
+#. Generator name: GUID
+msgid "GUID"
+msgstr "GUID"
+
+#. Generator name: Hex Color
+msgid "Hex Color"
+msgstr "Cor Hex"
+
+#. Generator name: Hex Color with Alpha
+msgid "Hex Color with Alpha"
+msgstr "Cor Hex com alfa"
+
+#. Generator name: Prefixed Hex
+msgid "Prefixed Hex"
+msgstr "Hex com prefixo"
+
+#. Generator name: EUI-64 Identifier
+msgid "EUI-64 Identifier"
+msgstr "Identificador EUI-64"
+
+#. Generator name: IPv4 Address
+msgid "IPv4 Address"
+msgstr "Endereço IPv4"
+
+#. Generator name: IPv6 Address
+msgid "IPv6 Address"
+msgstr "Endereço IPv6"
+
+#. CLI: about description
+msgid "Generate various types of hexadecimal values"
+msgstr "Gerar vários tipos de valores hexadecimais"
+
+#. CLI: -g flag help
+msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "Tipo de gerador: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+
+#. CLI: -l flag help
+msgid "Number of lines to generate"
+msgstr "Número de linhas a gerar"
+
+#. CLI: -d flag help
+msgid "Number of digits (where applicable)"
+msgstr "Número de dígitos (quando aplicável)"
+
+#. CLI: -u flag help
+msgid "Use uppercase hexadecimal characters"
+msgstr "Usar caracteres hexadecimais em maiúsculas"
+
+#. CLI: -v flag help
+msgid "Print version"
+msgstr "Mostrar versão"
+
+#. CLI: unknown generator error
+msgid "Unknown generator: {}. Using 'custom' instead."
+msgstr "Gerador desconhecido: {}. Usando 'custom' em vez disso."
+
+#. CLI: available generators list
+msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "Geradores disponíveis: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+
+#. CLI: no generator specified error
+msgid "No generator specified. Use -g <type> to select a generator."
+msgstr "Nenhum gerador especificado. Use -g <tipo> para selecionar um gerador."
+
+#. CLI: -h flag help
+msgid "Print help"
+msgstr "Exibir ajuda"
+
+#. GTK init failure
+msgid "Failed to initialize GTK"
+msgstr "Falha ao inicializar o GTK"

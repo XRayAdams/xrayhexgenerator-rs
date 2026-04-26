@@ -1,6 +1,7 @@
 // (c) 2025,26 Konstantin Adamov, licensed under MIT
 
-use clap::Parser;
+use clap::{CommandFactory, FromArgMatches, Parser};
+use crate::tr;
 
 #[derive(Parser, Debug)]
 #[command(name = "xrayhexgenerator")]
@@ -32,7 +33,34 @@ pub struct Cli {
 
 impl Cli {
     pub fn parse_args() -> Self {
-        Cli::parse()
+        let cmd = Cli::command()
+            .about(tr!("Generate various types of hexadecimal values"))
+            .disable_help_flag(true)
+            .arg(
+                clap::Arg::new("help")
+                    .short('h')
+                    .long("help")
+                    .action(clap::ArgAction::Help)
+                    .help(tr!("Print help"))
+            )
+            .mut_arg("generator", |a| {
+                a.help(tr!("Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"))
+            })
+            .mut_arg("lines", |a| {
+                a.help(tr!("Number of lines to generate"))
+            })
+            .mut_arg("digits", |a| {
+                a.help(tr!("Number of digits (where applicable)"))
+            })
+            .mut_arg("uppercase", |a| {
+                a.help(tr!("Use uppercase hexadecimal characters"))
+            })
+            .mut_arg("_version", |a| {
+                a.help(tr!("Print version"))
+            });
+
+        let matches = cmd.get_matches();
+        Cli::from_arg_matches(&matches).expect("Failed to parse CLI arguments")
     }
 
     pub fn is_cli_mode() -> bool {

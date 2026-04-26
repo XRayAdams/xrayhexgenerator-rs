@@ -26,6 +26,7 @@ APP_VERSION_LONG=$(grep -E '^\s*version = ' "$CARGO_FILE" | head -n1 | cut -d ' 
 APP_VERSION=$(echo "$APP_VERSION_LONG" | cut -d'+' -f1)
 APP_BUILD=$(echo "$APP_VERSION_LONG" | cut -d'+' -f2)
 
+strip target/release/"$APP_NAME"
 
 # Set app versions to all files for packaging
 packaging/set_app_versions.sh
@@ -41,6 +42,7 @@ mkdir -p "$PACKAGE_DIR/usr/share/applications"
 mkdir -p "$PACKAGE_DIR/usr/share/icons"
 mkdir -p "$PACKAGE_DIR/usr/share/metainfo"
 mkdir -p "$PACKAGE_DIR/usr/share/doc/$APP_NAME"
+mkdir -p "$PACKAGE_DIR/usr/share/locale"
 
 # Copy the built binary directly to /usr/bin
 cp "target/release/$APP_NAME" "$PACKAGE_DIR/usr/bin/"
@@ -48,6 +50,7 @@ cp packaging/gui/$APP_ID.desktop "$PACKAGE_DIR/usr/share/applications/"
 cp packaging/gui/$APP_ID.png "$PACKAGE_DIR/usr/share/icons/"
 cp packaging/$APP_ID.metainfo.xml "$PACKAGE_DIR/usr/share/metainfo/"
 cp LICENSE "$PACKAGE_DIR/usr/share/doc/$APP_NAME/"
+cp -r target/release/locale/. "$PACKAGE_DIR/usr/share/locale/"
 
 # Copy control file
 mkdir -p "$PACKAGE_DIR/DEBIAN"
@@ -81,14 +84,14 @@ CHANGE_DATE=$(date +"%a %b %d %Y")
 CHANGE_DATE="$CHANGE_DATE Konstantin Adamov (xrayadamo@gmail.com) - $APP_VERSION-$APP_BUILD"
 sed "s/^*loghere$/* $CHANGE_DATE/" "packaging/$APP_NAME.spec" > "$RPM_BUILD_ROOT/SPECS/$APP_NAME.spec"
 
-# Copy desktop and icon files, replacing Exec and TryExec with app name , by default it has full path for debian package
-sed -e "s/Icon=$APP_ID/Icon=$APP_NAME/" -e "s/^\(Exec\|TryExec\)=.*$/\1=$APP_NAME/" "packaging/gui/$APP_ID.desktop"  > "$RPM_BUILD_ROOT/SOURCES/$APP_ID.desktop"
+sed -e "s/Icon=$APP_ID/Icon=$APP_NAME/" "packaging/gui/$APP_ID.desktop"  > "$RPM_BUILD_ROOT/SOURCES/$APP_ID.desktop"
 cp packaging/gui/"$APP_ID".png "$RPM_BUILD_ROOT/SOURCES/"
 cp packaging/"$APP_ID".metainfo.xml "$RPM_BUILD_ROOT/SOURCES/"
 cp LICENSE "$RPM_BUILD_ROOT/SOURCES/"
+
 # Package the application binary into a tarball
 pushd target || exit
-tar -czvf "$RPM_BUILD_ROOT/SOURCES/$APP_NAME-$APP_VERSION.tar.gz" "release/$APP_NAME"
+tar -czvf "$RPM_BUILD_ROOT/SOURCES/$APP_NAME-$APP_VERSION.tar.gz" "release/$APP_NAME" release/locale
 popd || exit
 
 # Build the RPM
@@ -125,6 +128,6 @@ ARCHIVE_NAME="${APP_NAME}-${APP_VERSION}+${APP_BUILD}-${MACHINE_ARCH}.tar.gz"
 FULL_ARCHIVE_PATH="dist/${ARCHIVE_NAME}"
 SOURCE_DIR="target/release"
 
-tar -czvf "$FULL_ARCHIVE_PATH" -C "$SOURCE_DIR" "$APP_NAME" > /dev/null
+tar -czvf "$FULL_ARCHIVE_PATH" -C "$SOURCE_DIR" "$APP_NAME" locale > /dev/null
 echo "TAR archive created in dist/"
 echo "___________________________________________________________"

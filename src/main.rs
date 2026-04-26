@@ -9,6 +9,7 @@ mod helpers;
 mod app;
 mod cli;
 use helpers::constants::{APP_ID};
+use helpers::i18n::init_i18n;
 use helpers::init_icon::init_app_icon;
 use app::App;
 use cli::Cli;
@@ -40,13 +41,13 @@ fn run_cli_mode() {
         Some("byteseq") => Box::new(ByteSequenceGenerator),
         Some("prefixed") => Box::new(PrefixedHexGenerator),
         Some(unknown) => {
-            eprintln!("Unknown generator: {}. Using 'custom' instead.", unknown);
-            eprintln!("Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed");
+            eprintln!("{}", tr!("Unknown generator: {}. Using 'custom' instead.").replace("{}", unknown));
+            eprintln!("{}", tr!("Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"));
             Box::new(CustomGenerator)
         }
         None => {
-            eprintln!("No generator specified. Use -g <type> to select a generator.");
-            eprintln!("Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed");
+            eprintln!("{}", tr!("No generator specified. Use -g <type> to select a generator."));
+            eprintln!("{}", tr!("Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"));
             std::process::exit(1);
         }
     };
@@ -62,6 +63,8 @@ fn run_cli_mode() {
 }
 
 fn main() {
+    init_i18n();
+
     // Check if we're running in CLI mode
     if Cli::is_cli_mode() {
         run_cli_mode();
@@ -69,7 +72,7 @@ fn main() {
     }
     
     // Otherwise, run the GUI
-    gtk4::init().expect("Failed to initialize GTK");
+    gtk4::init().expect(&tr!("Failed to initialize GTK"));
     
     let gtk_app = adw::Application::builder()
         .application_id(APP_ID)
