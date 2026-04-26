@@ -1,0 +1,141 @@
+# Hindi translation for xrayhexgenerator.
+# Copyright (C) 2025, 26 Konstantin Adamov
+# This file is distributed under the same license as the xrayhexgenerator package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xrayhexgenerator 2.4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-25 00:00+0000\n"
+"PO-Revision-Date: 2026-04-26 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Window title / About dialog application name
+msgid "Hex Generator"
+msgstr "हेक्स जेनरेटर"
+
+#. Menu item
+msgid "_About"
+msgstr "के बारे में(_A)"
+
+#. Label for generator dropdown
+msgid "Generator:"
+msgstr "जेनरेटर:"
+
+#. Label for digits spin button
+msgid "Digits"
+msgstr "अंक"
+
+#. Label for lines spin button
+msgid "Lines"
+msgstr "पंक्तियाँ"
+
+#. Label for uppercase switch
+msgid "Output in Uppercase"
+msgstr "बड़े अक्षरों में आउटपुट"
+
+#. Generate button (mnemonic)
+msgid "_Generate"
+msgstr "बनाएँ(_G)"
+
+#. Copy to clipboard button (mnemonic)
+msgid "_Copy to Clipboard"
+msgstr "क्लिपबोर्ड पर कॉपी करें(_C)"
+
+#. Toast notification after copying
+msgid "Copied to clipboard"
+msgstr "क्लिपबोर्ड पर कॉपी हो गया"
+
+#. About dialog copyright
+msgid "© 2025, 26 Konstantin Adamov"
+msgstr "© 2025, 26 Konstantin Adamov"
+
+#. Generator name: Custom Hex
+msgid "Custom Hex"
+msgstr "कस्टम हेक्स"
+
+#. Generator name: MAC Address
+msgid "MAC Address"
+msgstr "MAC पता"
+
+#. Generator name: Byte Sequence
+msgid "Byte Sequence"
+msgstr "बाइट अनुक्रम"
+
+#. Generator name: GUID
+msgid "GUID"
+msgstr "GUID"
+
+#. Generator name: Hex Color
+msgid "Hex Color"
+msgstr "हेक्स रंग"
+
+#. Generator name: Hex Color with Alpha
+msgid "Hex Color with Alpha"
+msgstr "अल्फा सहित हेक्स रंग"
+
+#. Generator name: Prefixed Hex
+msgid "Prefixed Hex"
+msgstr "उपसर्ग युक्त हेक्स"
+
+#. Generator name: EUI-64 Identifier
+msgid "EUI-64 Identifier"
+msgstr "EUI-64 पहचानकर्ता"
+
+#. Generator name: IPv4 Address
+msgid "IPv4 Address"
+msgstr "IPv4 पता"
+
+#. Generator name: IPv6 Address
+msgid "IPv6 Address"
+msgstr "IPv6 पता"
+
+#. CLI: about description
+msgid "Generate various types of hexadecimal values"
+msgstr "विभिन्न प्रकार के हेक्साडेसिमल मान उत्पन्न करें"
+
+#. CLI: -g flag help
+msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "जेनरेटर प्रकार: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+
+#. CLI: -l flag help
+msgid "Number of lines to generate"
+msgstr "उत्पन्न करने के लिए पंक्तियों की संख्या"
+
+#. CLI: -d flag help
+msgid "Number of digits (where applicable)"
+msgstr "अंकों की संख्या (जहाँ लागू हो)"
+
+#. CLI: -u flag help
+msgid "Use uppercase hexadecimal characters"
+msgstr "बड़े अक्षरों में हेक्साडेसिमल वर्णों का उपयोग करें"
+
+#. CLI: -v flag help
+msgid "Print version"
+msgstr "संस्करण दिखाएँ"
+
+#. CLI: unknown generator error
+msgid "Unknown generator: {}. Using 'custom' instead."
+msgstr "अज्ञात जेनरेटर: {}। इसके बजाय 'custom' का उपयोग किया जा रहा है।"
+
+#. CLI: available generators list
+msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "उपलब्ध जेनरेटर: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+
+#. CLI: no generator specified error
+msgid "No generator specified. Use -g <type> to select a generator."
+msgstr "कोई जेनरेटर निर्दिष्ट नहीं किया गया। जेनरेटर चुनने के लिए -g <प्रकार> का उपयोग करें।"
+
+#. CLI: -h flag help
+msgid "Print help"
+msgstr "सहायता दिखाएँ"
+
+#. GTK init failure
+msgid "Failed to initialize GTK"
+msgstr "GTK प्रारंभ करने में विफल"

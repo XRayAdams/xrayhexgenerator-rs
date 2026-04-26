@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, 26 Konstantin Adamov
+# This file is distributed under the same license as the xrayhexgenerator package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xrayhexgenerator 2.4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-25 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Window title / About dialog application name
+#: src/app.rs src/helpers/actions.rs
+msgid "Hex Generator"
+msgstr ""
+
+#. Menu item
+#: src/app.rs
+msgid "_About"
+msgstr ""
+
+#. Label for generator dropdown
+#: src/app.rs
+msgid "Generator:"
+msgstr ""
+
+#. Label for digits spin button
+#: src/app.rs
+msgid "Digits"
+msgstr ""
+
+#. Label for lines spin button
+#: src/app.rs
+msgid "Lines"
+msgstr ""
+
+#. Label for uppercase switch
+#: src/app.rs
+msgid "Output in Uppercase"
+msgstr ""
+
+#. Generate button (mnemonic)
+#: src/app.rs
+msgid "_Generate"
+msgstr ""
+
+#. Copy to clipboard button (mnemonic)
+#: src/app.rs
+msgid "_Copy to Clipboard"
+msgstr ""
+
+#. Toast notification after copying
+#: src/app.rs
+msgid "Copied to clipboard"
+msgstr ""
+
+#. About dialog copyright
+#: src/helpers/actions.rs
+msgid "© 2025, 26 Konstantin Adamov"
+msgstr ""
+
+#. Generator name: Custom Hex
+#: src/app.rs
+msgid "Custom Hex"
+msgstr ""
+
+#. Generator name: MAC Address
+#: src/app.rs
+msgid "MAC Address"
+msgstr ""
+
+#. Generator name: Byte Sequence
+#: src/app.rs
+msgid "Byte Sequence"
+msgstr ""
+
+#. Generator name: GUID
+#: src/app.rs
+msgid "GUID"
+msgstr ""
+
+#. Generator name: Hex Color
+#: src/app.rs
+msgid "Hex Color"
+msgstr ""
+
+#. Generator name: Hex Color with Alpha
+#: src/app.rs
+msgid "Hex Color with Alpha"
+msgstr ""
+
+#. Generator name: Prefixed Hex
+#: src/app.rs
+msgid "Prefixed Hex"
+msgstr ""
+
+#. Generator name: EUI-64 Identifier
+#: src/app.rs
+msgid "EUI-64 Identifier"
+msgstr ""
+
+#. Generator name: IPv4 Address
+#: src/app.rs
+msgid "IPv4 Address"
+msgstr ""
+
+#. Generator name: IPv6 Address
+#: src/app.rs
+msgid "IPv6 Address"
+msgstr ""
+
+#. CLI: about description
+#: src/cli.rs
+msgid "Generate various types of hexadecimal values"
+msgstr ""
+
+#. CLI: -g flag help
+#: src/cli.rs
+msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr ""
+
+#. CLI: -l flag help
+#: src/cli.rs
+msgid "Number of lines to generate"
+msgstr ""
+
+#. CLI: -d flag help
+#: src/cli.rs
+msgid "Number of digits (where applicable)"
+msgstr ""
+
+#. CLI: -u flag help
+#: src/cli.rs
+msgid "Use uppercase hexadecimal characters"
+msgstr ""
+
+#. CLI: -v flag help
+#: src/cli.rs
+msgid "Print version"
+msgstr ""
+
+#. CLI: unknown generator error
+#: src/main.rs
+msgid "Unknown generator: {}. Using 'custom' instead."
+msgstr ""
+
+#. CLI: available generators list
+#: src/main.rs
+msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr ""
+
+#. CLI: no generator specified error
+#: src/main.rs
+msgid "No generator specified. Use -g <type> to select a generator."
+msgstr ""
+
+#. CLI: -h flag help
+msgid "Print help"
+msgstr ""
+
+#. GTK init failure
+#: src/main.rs
+msgid "Failed to initialize GTK"
+msgstr ""

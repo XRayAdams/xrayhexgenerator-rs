@@ -1,0 +1,141 @@
+# Indonesian translation for xrayhexgenerator.
+# Copyright (C) 2025, 26 Konstantin Adamov
+# This file is distributed under the same license as the xrayhexgenerator package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xrayhexgenerator 2.4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-25 00:00+0000\n"
+"PO-Revision-Date: 2026-04-26 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Window title / About dialog application name
+msgid "Hex Generator"
+msgstr "Generator Hex"
+
+#. Menu item
+msgid "_About"
+msgstr "_Tentang"
+
+#. Label for generator dropdown
+msgid "Generator:"
+msgstr "Generator:"
+
+#. Label for digits spin button
+msgid "Digits"
+msgstr "Digit"
+
+#. Label for lines spin button
+msgid "Lines"
+msgstr "Baris"
+
+#. Label for uppercase switch
+msgid "Output in Uppercase"
+msgstr "Keluaran dalam Huruf Besar"
+
+#. Generate button (mnemonic)
+msgid "_Generate"
+msgstr "_Buat"
+
+#. Copy to clipboard button (mnemonic)
+msgid "_Copy to Clipboard"
+msgstr "_Salin ke Papan Klip"
+
+#. Toast notification after copying
+msgid "Copied to clipboard"
+msgstr "Disalin ke papan klip"
+
+#. About dialog copyright
+msgid "© 2025, 26 Konstantin Adamov"
+msgstr "© 2025, 26 Konstantin Adamov"
+
+#. Generator name: Custom Hex
+msgid "Custom Hex"
+msgstr "Hex Kustom"
+
+#. Generator name: MAC Address
+msgid "MAC Address"
+msgstr "Alamat MAC"
+
+#. Generator name: Byte Sequence
+msgid "Byte Sequence"
+msgstr "Urutan Byte"
+
+#. Generator name: GUID
+msgid "GUID"
+msgstr "GUID"
+
+#. Generator name: Hex Color
+msgid "Hex Color"
+msgstr "Warna Hex"
+
+#. Generator name: Hex Color with Alpha
+msgid "Hex Color with Alpha"
+msgstr "Warna Hex dengan Alpha"
+
+#. Generator name: Prefixed Hex
+msgid "Prefixed Hex"
+msgstr "Hex Berimbuhan"
+
+#. Generator name: EUI-64 Identifier
+msgid "EUI-64 Identifier"
+msgstr "Pengenal EUI-64"
+
+#. Generator name: IPv4 Address
+msgid "IPv4 Address"
+msgstr "Alamat IPv4"
+
+#. Generator name: IPv6 Address
+msgid "IPv6 Address"
+msgstr "Alamat IPv6"
+
+#. CLI: about description
+msgid "Generate various types of hexadecimal values"
+msgstr "Membuat berbagai jenis nilai heksadesimal"
+
+#. CLI: -g flag help
+msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "Jenis generator: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+
+#. CLI: -l flag help
+msgid "Number of lines to generate"
+msgstr "Jumlah baris yang dibuat"
+
+#. CLI: -d flag help
+msgid "Number of digits (where applicable)"
+msgstr "Jumlah digit (jika berlaku)"
+
+#. CLI: -u flag help
+msgid "Use uppercase hexadecimal characters"
+msgstr "Gunakan karakter heksadesimal huruf besar"
+
+#. CLI: -v flag help
+msgid "Print version"
+msgstr "Tampilkan versi"
+
+#. CLI: unknown generator error
+msgid "Unknown generator: {}. Using 'custom' instead."
+msgstr "Generator tidak dikenal: {}. Menggunakan 'custom' sebagai gantinya."
+
+#. CLI: available generators list
+msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "Generator yang tersedia: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+
+#. CLI: no generator specified error
+msgid "No generator specified. Use -g <type> to select a generator."
+msgstr "Tidak ada generator yang ditentukan. Gunakan -g <jenis> untuk memilih generator."
+
+#. CLI: -h flag help
+msgid "Print help"
+msgstr "Tampilkan bantuan"
+
+#. GTK init failure
+msgid "Failed to initialize GTK"
+msgstr "Gagal menginisialisasi GTK"

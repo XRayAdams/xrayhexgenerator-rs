@@ -1,6 +1,6 @@
 [package]
 name = "xrayhexgenerator"
-version = "2.4.8+36"
+version = "2.5.10+40"
 edition = "2024"
 
 [dependencies]
@@ -13,3 +13,4 @@ relm4 = { version = "0.10.1", features = ["libadwaita"] }
 relm4-macros = { version = "0.10.1"}
 relm4-components = "0.10.1"
 clap = { version = "4.6", features = ["derive"] }
+gettext-rs = { version = "0.7", features = ["gettext-system"] }
