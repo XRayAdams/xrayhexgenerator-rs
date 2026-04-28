@@ -1,0 +1,137 @@
+# Serbian translation for xrayhexgenerator.
+# Copyright (C) 2025, 26 Konstantin Adamov
+# This file is distributed under the same license as the xrayhexgenerator package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xrayhexgenerator 2.4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-27 00:00+0000\n"
+"PO-Revision-Date: 2026-04-27 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Serbian\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. Window title / About dialog application name
+msgid "Hex Generator"
+msgstr "Hex генератор"
+
+#. Menu item
+msgid "_About"
+msgstr "_О програму"
+
+#. Label for generator dropdown
+msgid "Generator:"
+msgstr "Генератор:"
+
+#. Label for digits spin button
+msgid "Digits"
+msgstr "Цифре"
+
+#. Label for lines spin button
+msgid "Lines"
+msgstr "Линије"
+
+#. Label for uppercase switch
+msgid "Output in Uppercase"
+msgstr "Излаз великим словима"
+
+#. Generate button (mnemonic)
+msgid "_Generate"
+msgstr "_Генериши"
+
+#. Copy to clipboard button (mnemonic)
+msgid "_Copy to Clipboard"
+msgstr "_Копирај у клипборд"
+
+#. Toast notification after copying
+msgid "Copied to clipboard"
+msgstr "Копирано у клипборд"
+
+#. About dialog copyright
+msgid "© 2025, 26 Konstantin Adamov"
+msgstr "© 2025, 26 Konstantin Adamov"
+
+#. Generator name: Custom Hex
+msgid "Custom Hex"
+msgstr "Произвољни Hex"
+
+#. Generator name: MAC Address
+msgid "MAC Address"
+msgstr "MAC адреса"
+
+#. Generator name: Byte Sequence
+msgid "Byte Sequence"
+msgstr "Секвенца бајтова"
+
+#. Generator name: GUID
+msgid "GUID"
+msgstr "GUID"
+
+#. Generator name: Hex Color
+msgid "Hex Color"
+msgstr "Hex боја"
+
+#. Generator name: Hex Color with Alpha
+msgid "Hex Color with Alpha"
+msgstr "Hex боја са алфа каналом"
+
+#. Generator name: Prefixed Hex
+msgid "Prefixed Hex"
+msgstr "Hex са префиксом"
+
+#. Generator name: EUI-64 Identifier
+msgid "EUI-64 Identifier"
+msgstr "EUI-64 идентификатор"
+
+#. Generator name: IPv4 Address
+msgid "IPv4 Address"
+msgstr "IPv4 адреса"
+
+#. Generator name: IPv6 Address
+msgid "IPv6 Address"
+msgstr "IPv6 адреса"
+
+#. CLI: about description
+msgid "Generate various types of hexadecimal values"
+msgstr "Генерисање различитих врста шеснаестичних вредности"
+
+#. CLI: -g flag help
+msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "Тип генератора: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+
+#. CLI: -l flag help
+msgid "Number of lines to generate"
+msgstr "Број линија за генерисање"
+
+#. CLI: -d flag help
+msgid "Number of digits (where applicable)"
+msgstr "Број цифара (где је применљиво)"
+
+#. CLI: -u flag help
+msgid "Use uppercase hexadecimal characters"
+msgstr "Користи шеснаестичне знакове великим словима"
+
+#. CLI: -v flag help
+msgid "Print version"
+msgstr "Прикажи верзију"
+
+#. CLI: unknown generator error
+msgid "Unknown generator: {}. Using 'custom' instead."
+msgstr "Непознат генератор: {}. Користи се 'custom' уместо тога."
+
+#. CLI: available generators list
+msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "Доступни генератори: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+
+#. CLI: no generator specified error
+msgid "No generator specified. Use -g <type> to select a generator."
+msgstr "Није наведен генератор. Користите -g <тип> за избор генератора."
+
+#. GTK init failure
+msgid "Failed to initialize GTK"
+msgstr "Нисмо успели да иницијализујемо GTK"

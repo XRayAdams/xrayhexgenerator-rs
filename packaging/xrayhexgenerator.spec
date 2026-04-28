@@ -1,6 +1,6 @@
 %define _name xrayhexgenerator
-%define _version 2.5.10
-%define _release 40
+%define _version 2.5.11
+%define _release 41
 %define debug_package %{nil}
 
 Name: %{_name}
