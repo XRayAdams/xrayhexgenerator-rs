@@ -7,9 +7,9 @@ msgstr ""
 "Project-Id-Version: xrayhexgenerator 2.4.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-25 00:00+0000\n"
-"PO-Revision-Date: 2026-04-26 00:00+0000\n"
+"PO-Revision-Date: 2026-06-06 00:00+0000\n"
 "Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
+"Language-Team: Chinese (Simplified)\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,7 +102,7 @@ msgstr "生成各种类型的十六进制值"
 
 #. CLI: -g flag help
 msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "生成器类型：custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "生成器类型：custom、mac、eui64、ipv4、ipv6、guid、hexcolor、hexalpha、byteseq、prefixed"
 
 #. CLI: -l flag help
 msgid "Number of lines to generate"
@@ -118,24 +118,32 @@ msgstr "使用大写十六进制字符"
 
 #. CLI: -v flag help
 msgid "Print version"
-msgstr "显示版本"
+msgstr "显示版本信息"
 
 #. CLI: unknown generator error
 msgid "Unknown generator: {}. Using 'custom' instead."
-msgstr "未知的生成器：{}。将改用 'custom'。"
+msgstr "未知生成器：{}。改用 'custom'。"
 
 #. CLI: available generators list
 msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "可用的生成器：custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "可用生成器：custom、mac、eui64、ipv4、ipv6、guid、hexcolor、hexalpha、byteseq、prefixed"
 
 #. CLI: no generator specified error
 msgid "No generator specified. Use -g <type> to select a generator."
-msgstr "未指定生成器。请使用 -g <类型> 来选择生成器。"
+msgstr "未指定生成器。使用 -g <类型> 选择生成器。"
 
 #. CLI: -h flag help
 msgid "Print help"
-msgstr "显示帮助"
+msgstr "显示帮助信息"
 
 #. GTK init failure
 msgid "Failed to initialize GTK"
 msgstr "GTK 初始化失败"
+
+#. Save to file button (mnemonic)
+msgid "_Save to File"
+msgstr "保存到文件(_S)"
+
+#. Toast notification after saving
+msgid "Saved to file"
+msgstr "已保存到文件"

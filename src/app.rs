@@ -1,9 +1,9 @@
 // (c) 2025,26 Konstantin Adamov, licensed under MIT
 
-use libadwaita as adw;
-use gtk4::prelude::*;
-use gtk4::{Align, PolicyType, TextBuffer, TextView, glib};
 use adw::ToastOverlay;
+use gtk4::prelude::*;
+use gtk4::{Align, PolicyType, TextBuffer, TextView, gio, glib};
+use libadwaita as adw;
 use relm4::actions::RelmActionGroup;
 use relm4::prelude::*;
 use serde::{Deserialize, Serialize};
@@ -12,20 +12,12 @@ use std::path::PathBuf;
 
 use crate::tr;
 
-use crate::generators::base_generator::BaseGenerator;
-use crate::generators::byte_sequence::ByteSequenceGenerator;
-use crate::generators::custom_generator::CustomGenerator;
-use crate::generators::guid_generator::GUIDGenerator;
-use crate::generators::hex_color::HexColorGenerator;
-use crate::generators::hex_color_with_alpha::HexColorWithAlphaGenerator;
-use crate::generators::mac_address::MacAddressGenerator;
-use crate::generators::eui64_generator::Eui64Generator;
-use crate::generators::ipv4_generator::IPv4Generator;
-use crate::generators::ipv6_generator::IPv6Generator;
-use crate::generators::prefixed_hex::PrefixedHexGenerator;
-use crate::helpers::actions::{AboutAction, WindowActionGroup, create_about_action};
-use crate::helpers::constants::{APP_NAME, SPACING_LARGE, SPACING_MEDIUM};
-use crate::helpers::number_editor::{NumberEditor};
+use crate::generators::{
+    BaseGenerator, ByteSequenceGenerator, CustomGenerator, Eui64Generator, GUIDGenerator,
+    HexColorGenerator, HexColorWithAlphaGenerator, IPv4Generator, IPv6Generator,
+    MacAddressGenerator, PrefixedHexGenerator,
+};
+use crate::helpers::{AboutAction, WindowActionGroup, create_about_action, APP_NAME, SPACING_LARGE, SPACING_MEDIUM, NumberEditor};
 
 #[derive(Serialize, Deserialize)]
 struct AppSettings {
@@ -56,9 +48,8 @@ pub struct App {
     gen_names: gtk4::StringList,
     toast_overlay: Option<ToastOverlay>,
     text_view: Option<TextView>,
+    window: Option<adw::ApplicationWindow>,
 }
-
-
 
 #[derive(Debug)]
 pub enum Messages {
@@ -68,6 +59,7 @@ pub enum Messages {
     UpdateDigits(usize),
     UpdateLines(usize),
     UpdateOutputUppercase(bool),
+    SaveToFile,
 }
 
 impl App {
@@ -208,7 +200,7 @@ impl SimpleComponent for App {
                                     sender.input(Messages::UpdateLines(value as usize));
                                 },
                             },
-                          
+
 
                             gtk::Box{
                                 set_orientation: gtk::Orientation::Vertical,
@@ -272,6 +264,14 @@ impl SimpleComponent for App {
                                     sender.input(Messages::CopyToClipboard);
                                 },
                             },
+                            gtk::Button::with_mnemonic(&tr!("_Save to File")) {
+                                #[watch]
+                                set_sensitive: !model.result_text.is_empty(),
+                                set_halign: Align::Start,
+                                connect_clicked[sender] => move|_| {
+                                    sender.input(Messages::SaveToFile);
+                                },
+                            },
                         },
                     }
                 }
@@ -290,7 +290,7 @@ impl SimpleComponent for App {
 
         let def_digits = generators[settings.selected_index].default_digits();
         let digits_are_editable = generators[settings.selected_index].digist_are_editable();
-            
+
         let mut model = Self {
             selected_index: settings.selected_index,
             digits: def_digits,
@@ -299,10 +299,10 @@ impl SimpleComponent for App {
             result_text: String::new(),
             toast_overlay: None,
             text_view: None,
+            window: None,
             output_uppercase: settings.output_uppercase,
             generators: generators,
             gen_names: gtk4::StringList::new(&[]),
-            
         };
 
         for generator in model.generators.iter() {
@@ -313,6 +313,7 @@ impl SimpleComponent for App {
 
         model.toast_overlay = Some(widgets.toast_overlay.clone());
         model.text_view = Some(widgets.result_text_view.clone());
+        model.window = Some(root.clone());
 
         let about_action =
             create_about_action(widgets.main_window.clone(), Self::get_app_version());
@@ -327,15 +328,10 @@ impl SimpleComponent for App {
     fn update(&mut self, message: Self::Input, _sender: ComponentSender<Self>) {
         match message {
             Messages::Generate => {
-                self.generators
-                    .get(self.selected_index)
-                    .map(|generator| {
-                        self.result_text = generator.generate(
-                            self.lines,
-                            self.digits,
-                            self.output_uppercase,
-                        );
-                    });
+                self.generators.get(self.selected_index).map(|generator| {
+                    self.result_text =
+                        generator.generate(self.lines, self.digits, self.output_uppercase);
+                });
             }
             Messages::CopyToClipboard => {
                 self.text_view
@@ -352,12 +348,10 @@ impl SimpleComponent for App {
             Messages::UpdateSelectedIndex(index) => {
                 self.selected_index = index;
 
-
-                self.generators.get(index)
-                    .map(|generator| {
-                        self.digits_enabled = generator.digist_are_editable();
-                        self.digits = generator.default_digits();
-                    });
+                self.generators.get(index).map(|generator| {
+                    self.digits_enabled = generator.digist_are_editable();
+                    self.digits = generator.default_digits();
+                });
 
                 self.save_config();
             }
@@ -372,6 +366,28 @@ impl SimpleComponent for App {
             Messages::UpdateOutputUppercase(uppercase) => {
                 self.output_uppercase = uppercase;
                 self.save_config();
+            }
+            Messages::SaveToFile => {
+                let window = self.window.clone();
+                let toast_overlay = self.toast_overlay.clone();
+                let result_text = self.result_text.clone();
+
+                let dialog = gtk4::FileDialog::builder()
+                    .initial_name("output.txt")
+                    .build();
+
+                dialog.save(window.as_ref(), gio::Cancellable::NONE, move |result| {
+                    if let Ok(file) = result {
+                        if let Some(path) = file.path() {
+                            let _ = std::fs::write(&path, result_text.as_str());
+
+                            toast_overlay
+                                .clone()
+                                .unwrap()
+                                .add_toast(adw::Toast::new(&tr!("Saved to file")));
+                        }
+                    }
+                });
             }
         }
     }

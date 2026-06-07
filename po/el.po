@@ -135,3 +135,15 @@ msgstr "Δεν ορίστηκε γεννήτρια. Χρησιμοποιήστε
 #. GTK init failure
 msgid "Failed to initialize GTK"
 msgstr "Αποτυχία αρχικοποίησης GTK"
+
+#. CLI: -h flag help
+msgid "Print help"
+msgstr "Εμφάνιση βοήθειας"
+
+#. Save to file button (mnemonic)
+msgid "_Save to File"
+msgstr "_Αποθήκευση σε αρχείο"
+
+#. Toast notification after saving
+msgid "Saved to file"
+msgstr "Αποθηκεύτηκε σε αρχείο"
