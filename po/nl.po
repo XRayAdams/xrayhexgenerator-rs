@@ -1,4 +1,4 @@
-# Danish translation for xrayhexgenerator.
+# Dutch translation for xrayhexgenerator.
 # Copyright (C) 2025, 26 Konstantin Adamov
 # This file is distributed under the same license as the xrayhexgenerator package.
 #
@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xrayhexgenerator 2.4.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-27 00:00+0000\n"
-"PO-Revision-Date: 2026-04-27 00:00+0000\n"
+"POT-Creation-Date: 2026-04-25 00:00+0000\n"
+"PO-Revision-Date: 2026-06-06 00:00+0000\n"
 "Last-Translator: \n"
-"Language-Team: Danish\n"
-"Language: da\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +22,7 @@ msgstr "Hex-generator"
 
 #. Menu item
 msgid "_About"
-msgstr "_Om"
+msgstr "_Info"
 
 #. Label for generator dropdown
 msgid "Generator:"
@@ -30,27 +30,27 @@ msgstr "Generator:"
 
 #. Label for digits spin button
 msgid "Digits"
-msgstr "Cifre"
+msgstr "Cijfers"
 
 #. Label for lines spin button
 msgid "Lines"
-msgstr "Linjer"
+msgstr "Regels"
 
 #. Label for uppercase switch
 msgid "Output in Uppercase"
-msgstr "Output med store bogstaver"
+msgstr "Uitvoer in hoofdletters"
 
 #. Generate button (mnemonic)
 msgid "_Generate"
-msgstr "_Generer"
+msgstr "_Genereren"
 
 #. Copy to clipboard button (mnemonic)
 msgid "_Copy to Clipboard"
-msgstr "_Kopiér til udklipsholder"
+msgstr "_Kopiëren naar klembord"
 
 #. Toast notification after copying
 msgid "Copied to clipboard"
-msgstr "Kopieret til udklipsholder"
+msgstr "Gekopieerd naar klembord"
 
 #. About dialog copyright
 msgid "© 2025, 26 Konstantin Adamov"
@@ -58,15 +58,15 @@ msgstr "© 2025, 26 Konstantin Adamov"
 
 #. Generator name: Custom Hex
 msgid "Custom Hex"
-msgstr "Brugerdefineret Hex"
+msgstr "Aangepaste hex"
 
 #. Generator name: MAC Address
 msgid "MAC Address"
-msgstr "MAC-adresse"
+msgstr "MAC-adres"
 
 #. Generator name: Byte Sequence
 msgid "Byte Sequence"
-msgstr "Bytesekvens"
+msgstr "Bytevolgorde"
 
 #. Generator name: GUID
 msgid "GUID"
@@ -74,31 +74,31 @@ msgstr "GUID"
 
 #. Generator name: Hex Color
 msgid "Hex Color"
-msgstr "Hex-farve"
+msgstr "Hex-kleur"
 
 #. Generator name: Hex Color with Alpha
 msgid "Hex Color with Alpha"
-msgstr "Hex-farve med alfa"
+msgstr "Hex-kleur met alpha"
 
 #. Generator name: Prefixed Hex
 msgid "Prefixed Hex"
-msgstr "Hex med præfiks"
+msgstr "Hex met voorvoegsel"
 
 #. Generator name: EUI-64 Identifier
 msgid "EUI-64 Identifier"
-msgstr "EUI-64-identifikator"
+msgstr "EUI-64-identifier"
 
 #. Generator name: IPv4 Address
 msgid "IPv4 Address"
-msgstr "IPv4-adresse"
+msgstr "IPv4-adres"
 
 #. Generator name: IPv6 Address
 msgid "IPv6 Address"
-msgstr "IPv6-adresse"
+msgstr "IPv6-adres"
 
 #. CLI: about description
 msgid "Generate various types of hexadecimal values"
-msgstr "Generer forskellige typer hexadecimale værdier"
+msgstr "Verschillende soorten hexadecimale waarden genereren"
 
 #. CLI: -g flag help
 msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
@@ -106,44 +106,44 @@ msgstr "Generatortype: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha,
 
 #. CLI: -l flag help
 msgid "Number of lines to generate"
-msgstr "Antal linjer der skal genereres"
+msgstr "Aantal regels om te genereren"
 
 #. CLI: -d flag help
 msgid "Number of digits (where applicable)"
-msgstr "Antal cifre (hvor relevant)"
+msgstr "Aantal cijfers (indien van toepassing)"
 
 #. CLI: -u flag help
 msgid "Use uppercase hexadecimal characters"
-msgstr "Brug hexadecimale tegn med store bogstaver"
+msgstr "Hoofdletters voor hexadecimale tekens gebruiken"
 
 #. CLI: -v flag help
 msgid "Print version"
-msgstr "Vis version"
+msgstr "Versie weergeven"
 
 #. CLI: unknown generator error
 msgid "Unknown generator: {}. Using 'custom' instead."
-msgstr "Ukendt generator: {}. Bruger 'custom' i stedet."
+msgstr "Onbekende generator: {}. In plaats daarvan wordt 'custom' gebruikt."
 
 #. CLI: available generators list
 msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "Tilgængelige generatorer: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "Beschikbare generatoren: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
 
 #. CLI: no generator specified error
 msgid "No generator specified. Use -g <type> to select a generator."
-msgstr "Ingen generator angivet. Brug -g <type> for at vælge en generator."
-
-#. GTK init failure
-msgid "Failed to initialize GTK"
-msgstr "Kunne ikke initialisere GTK"
+msgstr "Geen generator opgegeven. Gebruik -g <type> om een generator te selecteren."
 
 #. CLI: -h flag help
 msgid "Print help"
-msgstr "Vis hjælp"
+msgstr "Help weergeven"
+
+#. GTK init failure
+msgid "Failed to initialize GTK"
+msgstr "Kan GTK niet initialiseren"
 
 #. Save to file button (mnemonic)
 msgid "_Save to File"
-msgstr "_Gem til fil"
+msgstr "_Opslaan in bestand"
 
 #. Toast notification after saving
 msgid "Saved to file"
-msgstr "Gemt til fil"
+msgstr "Opgeslagen in bestand"

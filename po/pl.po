@@ -139,3 +139,11 @@ msgstr "Wyświetl pomoc"
 #. GTK init failure
 msgid "Failed to initialize GTK"
 msgstr "Nie udało się zainicjalizować GTK"
+
+#. Save to file button (mnemonic)
+msgid "_Save to File"
+msgstr "_Zapisz do pliku"
+
+#. Toast notification after saving
+msgid "Saved to file"
+msgstr "Zapisano do pliku"

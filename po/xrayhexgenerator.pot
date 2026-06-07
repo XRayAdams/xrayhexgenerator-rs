@@ -170,3 +170,13 @@ msgstr ""
 #: src/main.rs
 msgid "Failed to initialize GTK"
 msgstr ""
+
+#. Save to file button (mnemonic)
+#: src/app.rs
+msgid "_Save to File"
+msgstr ""
+
+#. Toast notification after saving
+#: src/app.rs
+msgid "Saved to file"
+msgstr ""

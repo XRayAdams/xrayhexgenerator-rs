@@ -135,3 +135,15 @@ msgstr "Nav norādīts ģenerators. Izmantojiet -g <veids>, lai izvēlētos ģen
 #. GTK init failure
 msgid "Failed to initialize GTK"
 msgstr "Neizdevās inicializēt GTK"
+
+#. CLI: -h flag help
+msgid "Print help"
+msgstr "Parādīt palīdzību"
+
+#. Save to file button (mnemonic)
+msgid "_Save to File"
+msgstr "_Saglābāt failā"
+
+#. Toast notification after saving
+msgid "Saved to file"
+msgstr "Saglābāts failā"
