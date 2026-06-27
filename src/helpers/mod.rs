@@ -7,5 +7,5 @@ pub mod init_icon;
 pub mod number_editor;
 
 pub use actions::{AboutAction, WindowActionGroup, create_about_action};
-pub use constants::{APP_NAME, APP_ID, SPACING_LARGE, SPACING_MEDIUM};
+pub use constants::{APP_NAME, SPACING_LARGE, SPACING_MEDIUM};
 pub use number_editor::NumberEditor;

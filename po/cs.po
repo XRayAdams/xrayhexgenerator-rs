@@ -1,0 +1,149 @@
+# Czech translation for xrayhexgenerator.
+# Copyright (C) 2025, 26 Konstantin Adamov
+# This file is distributed under the same license as the xrayhexgenerator package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xrayhexgenerator 2.4.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-25 00:00+0000\n"
+"PO-Revision-Date: 2026-04-25 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Czech\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#. Window title / About dialog application name
+msgid "Hex Generator"
+msgstr "Hex generátor"
+
+#. Menu item
+msgid "_About"
+msgstr "O _aplikaci"
+
+#. Label for generator dropdown
+msgid "Generator:"
+msgstr "Generátor:"
+
+#. Label for digits spin button
+msgid "Digits"
+msgstr "Číslice"
+
+#. Label for lines spin button
+msgid "Lines"
+msgstr "Řádky"
+
+#. Label for uppercase switch
+msgid "Output in Uppercase"
+msgstr "Výstup velkými písmeny"
+
+#. Generate button (mnemonic)
+msgid "_Generate"
+msgstr "_Vygenerovat"
+
+#. Copy to clipboard button (mnemonic)
+msgid "_Copy to Clipboard"
+msgstr "_Kopírovat do schránky"
+
+#. Toast notification after copying
+msgid "Copied to clipboard"
+msgstr "Zkopírováno do schránky"
+
+#. About dialog copyright
+msgid "© 2025, 26 Konstantin Adamov"
+msgstr "© 2025, 26 Konstantin Adamov"
+
+#. Generator name: Custom Hex
+msgid "Custom Hex"
+msgstr "Vlastní Hex"
+
+#. Generator name: MAC Address
+msgid "MAC Address"
+msgstr "MAC Adresa"
+
+#. Generator name: Byte Sequence
+msgid "Byte Sequence"
+msgstr "Sekvence bajtů"
+
+#. Generator name: GUID
+msgid "GUID"
+msgstr "GUID"
+
+#. Generator name: Hex Color
+msgid "Hex Color"
+msgstr "Hex barva"
+
+#. Generator name: Hex Color with Alpha
+msgid "Hex Color with Alpha"
+msgstr "Hex barva s alfa"
+
+#. Generator name: Prefixed Hex
+msgid "Prefixed Hex"
+msgstr "Hex s předponou"
+
+#. Generator name: EUI-64 Identifier
+msgid "EUI-64 Identifier"
+msgstr "Identifikátor EUI-64"
+
+#. Generator name: IPv4 Address
+msgid "IPv4 Address"
+msgstr "IPv4 adresa"
+
+#. Generator name: IPv6 Address
+msgid "IPv6 Address"
+msgstr "IPv6 adresa"
+
+#. CLI: about description
+msgid "Generate various types of hexadecimal values"
+msgstr "Generuje různé typy hexadecimálních hodnot"
+
+#. CLI: -g flag help
+msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "Typ generátoru: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+
+#. CLI: -l flag help
+msgid "Number of lines to generate"
+msgstr "Počet řádků k vygenerování"
+
+#. CLI: -d flag help
+msgid "Number of digits (where applicable)"
+msgstr "Počet číslic (pouze pro příslušné typy)"
+
+#. CLI: -u flag help
+msgid "Use uppercase hexadecimal characters"
+msgstr "Použít velká hexadecimální číslice"
+
+#. CLI: -v flag help
+msgid "Print version"
+msgstr "Zobrazit verzi"
+
+#. CLI: unknown generator error
+msgid "Unknown generator: {}. Using 'custom' instead."
+msgstr "Neznámý generátor: {}. Místo toho použito 'custom'."
+
+#. CLI: available generators list
+msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgstr "Dostupné generátory: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+
+#. CLI: no generator specified error
+msgid "No generator specified. Use -g <type> to select a generator."
+msgstr "Žádný generátor nebyl zadán. Použijte -g <typ> pro výběr."
+
+#. CLI: -h flag help
+msgid "Print help"
+msgstr "Zobrazit nápovědu"
+
+#. GTK init failure
+msgid "Failed to initialize GTK"
+msgstr "Nepodařilo se inicializovat GTK"
+
+#. Save to file button (mnemonic)
+msgid "_Save to File"
+msgstr "_Uložit do souboru"
+
+#. Toast notification after saving
+msgid "Saved to file"
+msgstr "Uloženo do souboru"
