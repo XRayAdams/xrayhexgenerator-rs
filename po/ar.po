@@ -14,121 +14,161 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
 #. Window title / About dialog application name
+#: src/app.rs src/helpers/actions.rs
 msgid "Hex Generator"
 msgstr "مُولّد الهكس"
 
 #. Menu item
+#: src/app.rs
 msgid "_About"
 msgstr "_حول"
 
 #. Label for generator dropdown
+#: src/app.rs
 msgid "Generator:"
 msgstr "المُولّد:"
 
 #. Label for digits spin button
+#: src/app.rs
 msgid "Digits"
 msgstr "الأرقام"
 
 #. Label for lines spin button
+#: src/app.rs
 msgid "Lines"
 msgstr "السطور"
 
 #. Label for uppercase switch
+#: src/app.rs
 msgid "Output in Uppercase"
 msgstr "الإخراج بحروف كبيرة"
 
 #. Generate button (mnemonic)
+#: src/app.rs
 msgid "_Generate"
 msgstr "_ولّد"
 
 #. Copy to clipboard button (mnemonic)
+#: src/app.rs
 msgid "_Copy to Clipboard"
 msgstr "_انسخ إلى الحافظة"
 
 #. Toast notification after copying
+#: src/app.rs
 msgid "Copied to clipboard"
 msgstr "تم النسخ إلى الحافظة"
 
 #. About dialog copyright
+#: src/helpers/actions.rs
 msgid "© 2025, 26 Konstantin Adamov"
 msgstr "© 2025، 26 كونستانتين آداموف"
 
 #. Generator name: Custom Hex
+#: src/app.rs
 msgid "Custom Hex"
 msgstr "هكس مخصص"
 
 #. Generator name: MAC Address
+#: src/app.rs
 msgid "MAC Address"
 msgstr "عنوان MAC"
 
 #. Generator name: Byte Sequence
+#: src/app.rs
 msgid "Byte Sequence"
 msgstr "تسلسل البايت"
 
 #. Generator name: GUID
+#: src/app.rs
 msgid "GUID"
 msgstr "GUID"
 
 #. Generator name: Hex Color
+#: src/app.rs
 msgid "Hex Color"
 msgstr "لون هكس"
 
 #. Generator name: Hex Color with Alpha
+#: src/app.rs
 msgid "Hex Color with Alpha"
 msgstr "لون هكس مع ألفا"
 
 #. Generator name: Prefixed Hex
+#: src/app.rs
 msgid "Prefixed Hex"
 msgstr "هكس مُسبَق"
 
 #. Generator name: EUI-64 Identifier
+#: src/app.rs
 msgid "EUI-64 Identifier"
 msgstr "معرّف EUI-64"
 
 #. Generator name: IPv4 Address
+#: src/app.rs
 msgid "IPv4 Address"
 msgstr "عنوان IPv4"
 
 #. Generator name: IPv6 Address
+#: src/app.rs
 msgid "IPv6 Address"
 msgstr "عنوان IPv6"
 
+#. Generator name: Base32 String
+#: src/app.rs
+msgid "Base32 String"
+msgstr "سلسلة Base32"
+
+#. Generator name: Short ID (NanoID)
+#: src/app.rs
+msgid "Short ID (NanoID)"
+msgstr "معرّف قصير (NanoID)"
+
 #. CLI: about description
+#: src/cli.rs
 msgid "Generate various types of hexadecimal values"
 msgstr "ولّد أنواعًا متنوعة من القيم Hexadecimal"
 
 #. CLI: -g flag help
-msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "نوع المُولّد: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+#: src/cli.rs
+msgid "Generator type: {}"
+msgstr "نوع المُولّد: {}"
+
+#. CLI: available generators list
+#: src/main.rs
+msgid "Available generators: {}"
+msgstr "المُولّدات المتاحة: {}"
 
 #. CLI: -l flag help
+#: src/cli.rs
 msgid "Number of lines to generate"
 msgstr "عدد الأسطر المراد توليدها"
 
 #. CLI: -d flag help
+#: src/cli.rs
 msgid "Number of digits (where applicable)"
 msgstr "عدد الأرقام (إن وُجدت)"
 
 #. CLI: -u flag help
+#: src/cli.rs
 msgid "Use uppercase hexadecimal characters"
 msgstr "استخدم أحرف Hexadecimal كبيرة"
 
 #. CLI: -v flag help
+#: src/cli.rs
 msgid "Print version"
 msgstr "اطبع الإصدار"
 
 #. CLI: unknown generator error
+#: src/main.rs
 msgid "Unknown generator: {}. Using 'custom' instead."
 msgstr "مُولّد غير معروف: {}. سيتم استخدام 'custom' بدلاً منه."
 
-#. CLI: available generators list
-msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "المُولّدات المتاحة: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-
 #. CLI: no generator specified error
+#: src/main.rs
 msgid "No generator specified. Use -g <type> to select a generator."
 msgstr "لم يُحدّد مُولّد. استخدم -g <type> لاختيار مُولّد."
 
@@ -137,13 +177,16 @@ msgid "Print help"
 msgstr "اطبع المساعدة"
 
 #. GTK init failure
+#: src/main.rs
 msgid "Failed to initialize GTK"
 msgstr "فشل في تهيئة GTK"
 
 #. Save to file button (mnemonic)
+#: src/app.rs
 msgid "_Save to File"
 msgstr "_حفظ إلى ملف"
 
 #. Toast notification after saving
+#: src/app.rs
 msgid "Saved to file"
 msgstr "تم الحفظ إلى الملف"

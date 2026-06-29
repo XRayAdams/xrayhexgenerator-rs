@@ -96,13 +96,21 @@ msgstr "Alamat IPv4"
 msgid "IPv6 Address"
 msgstr "Alamat IPv6"
 
+#. Generator name: Base32 String
+msgid "Base32 String"
+msgstr "Rentetan Base32"
+
+#. Generator name: Short ID (NanoID)
+msgid "Short ID (NanoID)"
+msgstr "ID Pendek (NanoID)"
+
 #. CLI: about description
 msgid "Generate various types of hexadecimal values"
 msgstr "Jana pelbagai jenis nilai heksadesimal"
 
 #. CLI: -g flag help
-msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "Jenis penjana: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Generator type: {}"
+msgstr "Jenis penjana: {}"
 
 #. CLI: -l flag help
 msgid "Number of lines to generate"
@@ -125,8 +133,8 @@ msgid "Unknown generator: {}. Using 'custom' instead."
 msgstr "Penjana tidak diketahui: {}. Menggunakan 'custom' pula."
 
 #. CLI: available generators list
-msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "Penjana yang tersedia: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Available generators: {}"
+msgstr "Penjana yang tersedia: {}"
 
 #. CLI: no generator specified error
 msgid "No generator specified. Use -g <type> to select a generator."

@@ -2,6 +2,7 @@
 
 use clap::{CommandFactory, FromArgMatches, Parser};
 use crate::tr;
+use crate::helpers::constants::GENERATORS_LIST;
 
 #[derive(Parser, Debug)]
 #[command(name = "xrayhexgenerator")]
@@ -10,7 +11,7 @@ use crate::tr;
 #[command(disable_version_flag = true)]
 #[command(arg_required_else_help = false)]
 pub struct Cli {
-    /// Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed
+    /// Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed, base32, shortid
     #[arg(short = 'g', long = "generator", value_name = "TYPE")]
     pub generator: Option<String>,
 
@@ -44,7 +45,7 @@ impl Cli {
                     .help(tr!("Print help"))
             )
             .mut_arg("generator", |a| {
-                a.help(tr!("Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"))
+                a.help(tr!("Generator type: {}").replace("{}", GENERATORS_LIST))
             })
             .mut_arg("lines", |a| {
                 a.help(tr!("Number of lines to generate"))
@@ -67,3 +68,4 @@ impl Cli {
         std::env::args().len() > 1
     }
 }
+

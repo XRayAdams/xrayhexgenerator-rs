@@ -96,13 +96,21 @@ msgstr "IPv4-adresse"
 msgid "IPv6 Address"
 msgstr "IPv6-adresse"
 
+#. Generator name: Base32 String
+msgid "Base32 String"
+msgstr "Base32-streng"
+
+#. Generator name: Short ID (NanoID)
+msgid "Short ID (NanoID)"
+msgstr "Kort ID (NanoID)"
+
 #. CLI: about description
 msgid "Generate various types of hexadecimal values"
 msgstr "Generer forskellige typer hexadecimale værdier"
 
 #. CLI: -g flag help
-msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "Generatortype: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Generator type: {}"
+msgstr "Generatortype: {}"
 
 #. CLI: -l flag help
 msgid "Number of lines to generate"
@@ -125,8 +133,8 @@ msgid "Unknown generator: {}. Using 'custom' instead."
 msgstr "Ukendt generator: {}. Bruger 'custom' i stedet."
 
 #. CLI: available generators list
-msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "Tilgængelige generatorer: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Available generators: {}"
+msgstr "Tilgængelige generatorer: {}"
 
 #. CLI: no generator specified error
 msgid "No generator specified. Use -g <type> to select a generator."

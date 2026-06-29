@@ -117,6 +117,16 @@ msgstr ""
 msgid "IPv6 Address"
 msgstr ""
 
+#. Generator name: Base32 String
+#: src/app.rs
+msgid "Base32 String"
+msgstr ""
+
+#. Generator name: Short ID (NanoID)
+#: src/app.rs
+msgid "Short ID (NanoID)"
+msgstr ""
+
 #. CLI: about description
 #: src/cli.rs
 msgid "Generate various types of hexadecimal values"
@@ -124,7 +134,12 @@ msgstr ""
 
 #. CLI: -g flag help
 #: src/cli.rs
-msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Generator type: {}"
+msgstr ""
+
+#. CLI: available generators list
+#: src/main.rs
+msgid "Available generators: {}"
 msgstr ""
 
 #. CLI: -l flag help
@@ -152,11 +167,6 @@ msgstr ""
 msgid "Unknown generator: {}. Using 'custom' instead."
 msgstr ""
 
-#. CLI: available generators list
-#: src/main.rs
-msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr ""
-
 #. CLI: no generator specified error
 #: src/main.rs
 msgid "No generator specified. Use -g <type> to select a generator."
@@ -180,3 +190,4 @@ msgstr ""
 #: src/app.rs
 msgid "Saved to file"
 msgstr ""
+

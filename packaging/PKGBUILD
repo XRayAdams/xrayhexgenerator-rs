@@ -1,7 +1,7 @@
 # Maintainer: Konstantin Adamov <xrayadamo@gmail.com>
 pkgname=xrayhexgenerator
-pkgver=2.5.13
-pkgrel=44
+pkgver=2.6.14
+pkgrel=45
 pkgdesc="A simple yet versatile HEX Generator application built with Rust for Linux desktops."
 arch=('x86_64' 'aarch64')
 url="https://github.com/XRayAdams/xrayhexgenerator-rs"

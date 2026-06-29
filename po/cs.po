@@ -96,13 +96,21 @@ msgstr "IPv4 adresa"
 msgid "IPv6 Address"
 msgstr "IPv6 adresa"
 
+#. Generator name: Base32 String
+msgid "Base32 String"
+msgstr "Base32 řetězec"
+
+#. Generator name: Short ID (NanoID)
+msgid "Short ID (NanoID)"
+msgstr "Krátké ID (NanoID)"
+
 #. CLI: about description
 msgid "Generate various types of hexadecimal values"
 msgstr "Generuje různé typy hexadecimálních hodnot"
 
 #. CLI: -g flag help
-msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "Typ generátoru: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Generator type: {}"
+msgstr "Typ generátoru: {}"
 
 #. CLI: -l flag help
 msgid "Number of lines to generate"
@@ -125,8 +133,8 @@ msgid "Unknown generator: {}. Using 'custom' instead."
 msgstr "Neznámý generátor: {}. Místo toho použito 'custom'."
 
 #. CLI: available generators list
-msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "Dostupné generátory: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Available generators: {}"
+msgstr "Dostupné generátory: {}"
 
 #. CLI: no generator specified error
 msgid "No generator specified. Use -g <type> to select a generator."

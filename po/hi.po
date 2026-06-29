@@ -96,13 +96,21 @@ msgstr "IPv4 पता"
 msgid "IPv6 Address"
 msgstr "IPv6 पता"
 
+#. Generator name: Base32 String
+msgid "Base32 String"
+msgstr "Base32 स्ट्रिंग"
+
+#. Generator name: Short ID (NanoID)
+msgid "Short ID (NanoID)"
+msgstr "छोटा ID (NanoID)"
+
 #. CLI: about description
 msgid "Generate various types of hexadecimal values"
 msgstr "विभिन्न प्रकार के हेक्साडेसिमल मान उत्पन्न करें"
 
 #. CLI: -g flag help
-msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "जेनरेटर प्रकार: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Generator type: {}"
+msgstr "जेनरेटर प्रकार: {}"
 
 #. CLI: -l flag help
 msgid "Number of lines to generate"
@@ -125,8 +133,8 @@ msgid "Unknown generator: {}. Using 'custom' instead."
 msgstr "अज्ञात जेनरेटर: {}। इसके बजाय 'custom' का उपयोग किया जा रहा है।"
 
 #. CLI: available generators list
-msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "उपलब्ध जेनरेटर: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Available generators: {}"
+msgstr "उपलब्ध जेनरेटर: {}"
 
 #. CLI: no generator specified error
 msgid "No generator specified. Use -g <type> to select a generator."

@@ -1,4 +1,4 @@
-# German translation for xrayhexgenerator.
+# Brazilian Portuguese translation for xrayhexgenerator.
 # Copyright (C) 2025, 26 Konstantin Adamov
 # This file is distributed under the same license as the xrayhexgenerator package.
 #
@@ -9,48 +9,48 @@ msgstr ""
 "POT-Creation-Date: 2026-04-25 00:00+0000\n"
 "PO-Revision-Date: 2026-04-25 00:00+0000\n"
 "Last-Translator: \n"
-"Language-Team: German\n"
-"Language: de\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Window title / About dialog application name
 msgid "Hex Generator"
-msgstr "Hex-Generator"
+msgstr "Gerador de Hex"
 
 #. Menu item
 msgid "_About"
-msgstr "_Über"
+msgstr "_Sobre"
 
 #. Label for generator dropdown
 msgid "Generator:"
-msgstr "Generator:"
+msgstr "Gerador:"
 
 #. Label for digits spin button
 msgid "Digits"
-msgstr "Ziffern"
+msgstr "Dígitos"
 
 #. Label for lines spin button
 msgid "Lines"
-msgstr "Zeilen"
+msgstr "Linhas"
 
 #. Label for uppercase switch
 msgid "Output in Uppercase"
-msgstr "Ausgabe in Großbuchstaben"
+msgstr "Saída em Maiúsculas"
 
 #. Generate button (mnemonic)
 msgid "_Generate"
-msgstr "_Generieren"
+msgstr "_Gerar"
 
 #. Copy to clipboard button (mnemonic)
 msgid "_Copy to Clipboard"
-msgstr "_In Zwischenablage kopieren"
+msgstr "_Copiar para a Área de Transferência"
 
 #. Toast notification after copying
 msgid "Copied to clipboard"
-msgstr "In Zwischenablage kopiert"
+msgstr "Copiado para a área de transferência"
 
 #. About dialog copyright
 msgid "© 2025, 26 Konstantin Adamov"
@@ -58,15 +58,15 @@ msgstr "© 2025, 26 Konstantin Adamov"
 
 #. Generator name: Custom Hex
 msgid "Custom Hex"
-msgstr "Benutzerdefiniertes Hex"
+msgstr "Hex Personalizado"
 
 #. Generator name: MAC Address
 msgid "MAC Address"
-msgstr "MAC-Adresse"
+msgstr "Endereço MAC"
 
 #. Generator name: Byte Sequence
 msgid "Byte Sequence"
-msgstr "Bytefolge"
+msgstr "Sequência de Bytes"
 
 #. Generator name: GUID
 msgid "GUID"
@@ -74,84 +74,84 @@ msgstr "GUID"
 
 #. Generator name: Hex Color
 msgid "Hex Color"
-msgstr "Hex-Farbe"
+msgstr "Cor Hex"
 
 #. Generator name: Hex Color with Alpha
 msgid "Hex Color with Alpha"
-msgstr "Hex-Farbe mit Alpha"
+msgstr "Cor Hex com Alfa"
 
 #. Generator name: Prefixed Hex
 msgid "Prefixed Hex"
-msgstr "Hex mit Präfix"
+msgstr "Hex com Prefixo"
 
 #. Generator name: EUI-64 Identifier
 msgid "EUI-64 Identifier"
-msgstr "EUI-64-Kennung"
+msgstr "Identificador EUI-64"
 
 #. Generator name: IPv4 Address
 msgid "IPv4 Address"
-msgstr "IPv4-Adresse"
+msgstr "Endereço IPv4"
 
 #. Generator name: IPv6 Address
 msgid "IPv6 Address"
-msgstr "IPv6-Adresse"
+msgstr "Endereço IPv6"
 
 #. Generator name: Base32 String
 msgid "Base32 String"
-msgstr "Base32-Zeichenkette"
+msgstr "String Base32"
 
 #. Generator name: Short ID (NanoID)
 msgid "Short ID (NanoID)"
-msgstr "Kurze ID (NanoID)"
+msgstr "ID Curto (NanoID)"
 
 #. CLI: about description
 msgid "Generate various types of hexadecimal values"
-msgstr "Verschiedene Arten von Hexadezimalwerten erzeugen"
+msgstr "Gerar vários tipos de valores hexadecimais"
 
 #. CLI: -g flag help
 msgid "Generator type: {}"
-msgstr "Generatortyp: {}"
+msgstr "Tipo de gerador: {}"
 
 #. CLI: -l flag help
 msgid "Number of lines to generate"
-msgstr "Anzahl der zu erzeugenden Zeilen"
+msgstr "Número de linhas para gerar"
 
 #. CLI: -d flag help
 msgid "Number of digits (where applicable)"
-msgstr "Anzahl der Ziffern (falls zutreffend)"
+msgstr "Número de dígitos (quando aplicável)"
 
 #. CLI: -u flag help
 msgid "Use uppercase hexadecimal characters"
-msgstr "Großbuchstaben für Hexadezimalzeichen verwenden"
+msgstr "Usar caracteres hexadecimais maiúsculos"
 
 #. CLI: -v flag help
 msgid "Print version"
-msgstr "Version ausgeben"
+msgstr "Exibir versão"
 
 #. CLI: unknown generator error
 msgid "Unknown generator: {}. Using 'custom' instead."
-msgstr "Unbekannter Generator: {}. Verwende stattdessen 'custom'."
+msgstr "Gerador desconhecido: {}. Usando 'custom' em seu lugar."
 
 #. CLI: available generators list
 msgid "Available generators: {}"
-msgstr "Verfügbare Generatoren: {}"
+msgstr "Geradores disponíveis: {}"
 
 #. CLI: no generator specified error
 msgid "No generator specified. Use -g <type> to select a generator."
-msgstr "Kein Generator angegeben. Verwende -g <Typ>, um einen Generator auszuwählen."
+msgstr "Nenhum gerador especificado. Use -g <tipo> para selecionar um gerador."
 
 #. CLI: -h flag help
 msgid "Print help"
-msgstr "Hilfe anzeigen"
+msgstr "Exibir ajuda"
 
 #. GTK init failure
 msgid "Failed to initialize GTK"
-msgstr "GTK konnte nicht initialisiert werden"
+msgstr "Falha ao inicializar o GTK"
 
 #. Save to file button (mnemonic)
 msgid "_Save to File"
-msgstr "_In Datei speichern"
+msgstr "_Salvar em Arquivo"
 
 #. Toast notification after saving
 msgid "Saved to file"
-msgstr "In Datei gespeichert"
+msgstr "Salvo no arquivo"
