@@ -11,6 +11,8 @@ pub mod prefixed_hex;
 pub mod eui64_generator;
 pub mod ipv4_generator;
 pub mod ipv6_generator;
+pub mod base32_generator;
+pub mod shortid_generator;
 
 pub use base_generator::BaseGenerator;
 pub use byte_sequence::ByteSequenceGenerator;
@@ -23,3 +25,5 @@ pub use eui64_generator::Eui64Generator;
 pub use ipv4_generator::IPv4Generator;
 pub use ipv6_generator::IPv6Generator;
 pub use prefixed_hex::PrefixedHexGenerator;
+pub use base32_generator::Base32Generator;
+pub use shortid_generator::ShortIdGenerator;

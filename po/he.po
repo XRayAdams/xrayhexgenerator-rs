@@ -116,6 +116,14 @@ msgstr "כתובת IPv4"
 msgid "IPv6 Address"
 msgstr "כתובת IPv6"
 
+#. Generator name: Base32 String
+msgid "Base32 String"
+msgstr "מחרוזת Base32"
+
+#. Generator name: Short ID (NanoID)
+msgid "Short ID (NanoID)"
+msgstr "מזהה קצר (NanoID)"
+
 #. CLI: about description
 #: src/cli.rs
 msgid "Generate various types of hexadecimal values"
@@ -123,8 +131,8 @@ msgstr "הפק סוגי ערכים הקסדיימליים שונים"
 
 #. CLI: -g flag help
 #: src/cli.rs
-msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "סוג מפיק: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Generator type: {}"
+msgstr "סוג מפיק: {}"
 
 #. CLI: -l flag help
 #: src/cli.rs
@@ -153,8 +161,8 @@ msgstr "מפיק לא ידוע: {}. משתמש ב-'custom' במקום."
 
 #. CLI: available generators list
 #: src/main.rs
-msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "מפעים זמינים: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
+msgid "Available generators: {}"
+msgstr "מפעים זמינים: {}"
 
 #. CLI: no generator specified error
 #: src/main.rs

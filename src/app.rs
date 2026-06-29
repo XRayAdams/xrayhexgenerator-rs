@@ -15,7 +15,7 @@ use crate::tr;
 use crate::generators::{
     BaseGenerator, ByteSequenceGenerator, CustomGenerator, Eui64Generator, GUIDGenerator,
     HexColorGenerator, HexColorWithAlphaGenerator, IPv4Generator, IPv6Generator,
-    MacAddressGenerator, PrefixedHexGenerator,
+    MacAddressGenerator, PrefixedHexGenerator, Base32Generator, ShortIdGenerator
 };
 use crate::helpers::{AboutAction, WindowActionGroup, create_about_action, APP_NAME, SPACING_LARGE, SPACING_MEDIUM, NumberEditor};
 
@@ -105,6 +105,8 @@ impl App {
             Box::new(Eui64Generator {}),
             Box::new(IPv4Generator {}),
             Box::new(IPv6Generator {}),
+            Box::new(Base32Generator {}),
+            Box::new(ShortIdGenerator {}),
         ]
     }
 

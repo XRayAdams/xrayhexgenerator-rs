@@ -96,13 +96,21 @@ msgstr "IPv4 地址"
 msgid "IPv6 Address"
 msgstr "IPv6 地址"
 
+#. Generator name: Base32 String
+msgid "Base32 String"
+msgstr "Base32 字符串"
+
+#. Generator name: Short ID (NanoID)
+msgid "Short ID (NanoID)"
+msgstr "短 ID (NanoID)"
+
 #. CLI: about description
 msgid "Generate various types of hexadecimal values"
 msgstr "生成各种类型的十六进制值"
 
 #. CLI: -g flag help
-msgid "Generator type: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "生成器类型：custom、mac、eui64、ipv4、ipv6、guid、hexcolor、hexalpha、byteseq、prefixed"
+msgid "Generator type: {}"
+msgstr "生成器类型：{}"
 
 #. CLI: -l flag help
 msgid "Number of lines to generate"
@@ -125,8 +133,8 @@ msgid "Unknown generator: {}. Using 'custom' instead."
 msgstr "未知生成器：{}。改用 'custom'。"
 
 #. CLI: available generators list
-msgid "Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"
-msgstr "可用生成器：custom、mac、eui64、ipv4、ipv6、guid、hexcolor、hexalpha、byteseq、prefixed"
+msgid "Available generators: {}"
+msgstr "可用生成器：{}"
 
 #. CLI: no generator specified error
 msgid "No generator specified. Use -g <type> to select a generator."

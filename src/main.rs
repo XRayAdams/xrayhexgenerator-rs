@@ -8,7 +8,7 @@ mod generators;
 mod helpers;
 mod app;
 mod cli;
-use helpers::constants::{APP_ID};
+use helpers::constants::{APP_ID, GENERATORS_LIST};
 use helpers::i18n::init_i18n;
 use helpers::init_icon::init_app_icon;
 use app::App;
@@ -24,6 +24,8 @@ use generators::hex_color::HexColorGenerator;
 use generators::hex_color_with_alpha::HexColorWithAlphaGenerator;
 use generators::byte_sequence::ByteSequenceGenerator;
 use generators::prefixed_hex::PrefixedHexGenerator;
+use generators::base32_generator::Base32Generator;
+use generators::shortid_generator::ShortIdGenerator;
 
 fn run_cli_mode() {
     let args = Cli::parse_args();
@@ -40,14 +42,16 @@ fn run_cli_mode() {
         Some("hexalpha") => Box::new(HexColorWithAlphaGenerator),
         Some("byteseq") => Box::new(ByteSequenceGenerator),
         Some("prefixed") => Box::new(PrefixedHexGenerator),
+        Some("base32") => Box::new(Base32Generator),
+        Some("shortid") => Box::new(ShortIdGenerator),
         Some(unknown) => {
             eprintln!("{}", tr!("Unknown generator: {}. Using 'custom' instead.").replace("{}", unknown));
-            eprintln!("{}", tr!("Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"));
+            eprintln!("{}", tr!("Available generators: {}").replace("{}", GENERATORS_LIST));
             Box::new(CustomGenerator)
         }
         None => {
             eprintln!("{}", tr!("No generator specified. Use -g <type> to select a generator."));
-            eprintln!("{}", tr!("Available generators: custom, mac, eui64, ipv4, ipv6, guid, hexcolor, hexalpha, byteseq, prefixed"));
+            eprintln!("{}", tr!("Available generators: {}").replace("{}", GENERATORS_LIST));
             std::process::exit(1);
         }
     };
@@ -87,3 +91,4 @@ fn main() {
     app.run::<App>(());
 
 }
+
