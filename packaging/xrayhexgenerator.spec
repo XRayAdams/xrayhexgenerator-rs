@@ -1,6 +1,6 @@
 %define _name xrayhexgenerator
 %define _version 2.6.14
-%define _release 45
+%define _release 46
 %define debug_package %{nil}
 
 Name: %{_name}
@@ -18,15 +18,18 @@ Source1: app.rayadams.xrayhexgenerator.desktop
 Source2: app.rayadams.xrayhexgenerator.png
 Source3: app.rayadams.xrayhexgenerator.metainfo.xml
 Source4: LICENSE
+Source5: README.txt
 
-Requires: gtk3, libstdc++
+Requires: gtk4
 
 %description
-A simple yet versatile HEX Generator application built with Rust + GTK4 for Linux desktops.
+A simple yet versatile HEX Generator application built with Rust + GTK4
+for Linux desktops.
 
 Features
 
-Theme Support: Adapts to your system\'s light or dark theme settings for a native look and feel.
+Theme Support: Adapts to your system\'s light or dark theme settings for
+a native look and feel.
 
 Variety of Generators: Provides several types of data generation:
 
@@ -34,11 +37,14 @@ Custom: Generate HEX strings with a user-defined number of digits.
 GUID: Generate universally unique identifiers (UUID v4).
 Mac Address: Generate random MAC addresses.
 HEX Color: Generate random HEX color codes (e.g., #RRGGBB).
-HEX Color with alpha: Generate random HEX color codes with an alpha channel (e.g., #AARRGGBB).
+HEX Color with alpha: Generate random HEX color codes with an alpha
+channel (e.g., #AARRGGBB).
 Byte Sequence: Generate sequences of HEX bytes (e.g., 00 FF 1A).
 Prefixed HEX: Generate HEX strings with a "0x" prefix.
-Customizable Output: Control the number of lines and digits (for applicable generators) and toggle uppercase output.
-Easy Sharing & Saving: Copy generated data to the clipboard, share it, or save it to a file.
+Customizable Output: Control the number of lines and digits (for
+applicable generators) and toggle uppercase output.
+Easy Sharing & Saving: Copy generated data to the clipboard, share it, or
+save it to a file.
 
 %prep
 %setup -q -n release
@@ -60,6 +66,7 @@ install -m 755 %{_name} %{buildroot}/usr/bin/%{_name}
 find locale -name "*.mo" | while read mo; do \
     install -D -m 644 "$mo" %{buildroot}/usr/share/${mo}; \
 done
+%find_lang %{_name}
 
 # Copy the desktop file
 install -m 644 %{SOURCE1} %{buildroot}/usr/share/applications/%{_name}.desktop
@@ -72,14 +79,18 @@ install -m 644 %{SOURCE3} %{buildroot}%{_datadir}/metainfo/%{name}.metainfo.xml
 
 # Copy license file
 install -Dpm 644 %{SOURCE4} %{buildroot}%{_licensedir}/%{name}/LICENSE
-%files
+
+# Copy README
+install -Dpm 644 %{SOURCE5} %{buildroot}%{_docdir}/%{name}/README.txt
+
+%files -f %{_name}.lang
 /usr/bin/%{_name}
 /usr/share/applications/%{_name}.desktop
 /usr/share/icons/hicolor/256x256/apps/%{_name}.png
 %{_datadir}/metainfo/%{name}.metainfo.xml
 %dir %{_licensedir}/%{name}
 %license %{_licensedir}/%{name}/LICENSE
-/usr/share/locale/*/LC_MESSAGES/xrayhexgenerator.mo
+%doc %{_docdir}/%{name}/README.txt
 
 %changelog
 *loghere
