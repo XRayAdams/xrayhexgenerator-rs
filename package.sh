@@ -88,6 +88,7 @@ sed -e "s/Icon=$APP_ID/Icon=$APP_NAME/" "packaging/gui/$APP_ID.desktop"  > "$RPM
 cp packaging/gui/"$APP_ID".png "$RPM_BUILD_ROOT/SOURCES/"
 cp packaging/"$APP_ID".metainfo.xml "$RPM_BUILD_ROOT/SOURCES/"
 cp LICENSE "$RPM_BUILD_ROOT/SOURCES/"
+cp packaging/README.txt "$RPM_BUILD_ROOT/SOURCES/"
 
 # Package the application binary into a tarball
 pushd target || exit

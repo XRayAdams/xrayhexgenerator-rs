@@ -1,6 +1,6 @@
 [package]
 name = "xrayhexgenerator"
-version = "2.6.14+45"
+version = "2.6.14+46"
 edition = "2024"
 
 [dependencies]
